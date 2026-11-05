@@ -123,9 +123,9 @@ p { margin: 0; color: var(--muted); }
 .catalogue-hero h1 { max-width: 15ch; }
 .service-hero h1 { overflow-wrap: anywhere; }
 .service-lead { max-width: 53ch; margin-top: 1rem; font-size: clamp(1rem, 1.7vw, 1.125rem); }
-.catalogue-featured { min-width: 0; padding: 1rem; border: 1px solid #d6e2f9; border-radius: 16px; background: #ffffffbd; }
+.catalogue-featured { min-width: 0; margin-top: 1rem; padding: 1rem; border: 1px solid #d6e2f9; border-radius: 16px; background: #ffffffbd; }
 .catalogue-featured h2 { margin: .25rem .35rem .8rem; font-size: 1.15rem; }
-.catalogue-featured__links { display: grid; gap: .4rem; }
+.catalogue-featured__links { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr)); gap: .4rem; }
 .catalogue-featured a {
   display: flex;
   align-items: center;
@@ -212,52 +212,6 @@ p { margin: 0; color: var(--muted); }
 .cardlink > span { color: var(--accent); font-weight: 700; }
 .empty { padding: 1.4rem; border: 1px solid var(--line); border-radius: 10px; background: #fff; }
 
-.service-visual {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 1rem;
-  min-width: 0;
-  min-height: clamp(235px, 29vw, 340px);
-  padding: clamp(1rem, 2.3vw, 1.5rem);
-  overflow: hidden;
-  border-radius: 16px;
-  background:
-    linear-gradient(#ffffff0b 1px, transparent 1px) 0 0 / 24px 24px,
-    linear-gradient(90deg, #ffffff0b 1px, transparent 1px) 0 0 / 24px 24px,
-    radial-gradient(ellipse at 47% 40%, var(--theme-light), var(--theme-dark) 80%);
-  box-shadow: 0 16px 32px #162e4d2b;
-  color: #fff;
-}
-.service-visual__label, .service-visual__footer { font: 600 .63rem/1.4 ui-monospace, monospace; letter-spacing: .12em; color: #e1eeff; }
-.service-visual__label { display: flex; align-items: center; gap: .45rem; }
-.service-visual__label i { width: 6px; height: 6px; border-radius: 50%; background: #95e3cf; box-shadow: 0 0 10px #95e3cf; }
-.service-visual__footer { align-self: flex-end; }
-.service-visual__diagram { display: grid; justify-items: center; gap: 1.35rem; }
-.service-visual__core {
-  display: grid;
-  place-items: center;
-  width: clamp(80px, 11vw, 116px);
-  aspect-ratio: 1;
-  border: 1px solid #c0d8ff9c;
-  border-radius: 27%;
-  background: linear-gradient(145deg, #ffffff36, #ffffff0c);
-  box-shadow: 0 0 0 .45rem #ffffff11, 0 0 0 1rem #ffffff09;
-  font: 750 clamp(1.1rem, 2vw, 1.55rem)/1 system-ui, sans-serif;
-  letter-spacing: .06em;
-}
-.service-visual__nodes { display: flex; justify-content: center; flex-wrap: wrap; gap: .35rem; }
-.service-visual__nodes span {
-  padding: .3rem .5rem;
-  border: 1px solid #c0d8ff6b;
-  border-radius: 6px;
-  background: var(--theme-dark);
-  color: #f2f6ff;
-  font-size: .72rem;
-  white-space: nowrap;
-}
-
 .service-jump { display: flex; flex-wrap: wrap; gap: .4rem; margin-block: 1rem 0; }
 .section { padding-block: clamp(2rem, 5vw, 3.8rem); }
 .service-guide {
@@ -281,6 +235,19 @@ p { margin: 0; color: var(--muted); }
 .service-guide__card h3 { margin-bottom: .55rem; }
 .service-guide__card p { font-size: .94rem; overflow-wrap: anywhere; }
 .service-guide__card--example { border-inline-start: 3px solid var(--accent); }
+
+.service-guide__first-version {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
+  gap: .85rem 1.4rem;
+  margin-top: .95rem;
+  padding: clamp(.9rem, 2.4vw, 1.4rem);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--tint);
+}
+.service-guide__first-version h3 { margin-bottom: .4rem; }
+.service-guide__first-version p { font-size: .91rem; }
 
 @media (max-width: 740px) {
   .service-guide__grid { grid-template-columns: minmax(0, 1fr); }
@@ -338,9 +305,7 @@ p { margin: 0; color: var(--muted); }
 
 @media (prefers-reduced-motion: no-preference) {
   html { scroll-behavior: smooth; }
-  .service-visual__core { animation: catalogue-breathe 4s ease-in-out infinite; }
   .catalogue-revealed { animation: catalogue-appear .4s ease-out both; }
-  @keyframes catalogue-breathe { 50% { transform: scale(1.06); } }
   @keyframes catalogue-appear { from { opacity: .55; transform: translateY(9px); } }
 }
 

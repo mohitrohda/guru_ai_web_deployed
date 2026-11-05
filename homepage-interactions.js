@@ -3,22 +3,12 @@
   'use strict';
   const root = document.querySelector('.intent-home');
   if (!root) return;
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
 
   const select = document.getElementById('cf-service');
-  const chips = [...document.querySelectorAll('[data-service-choice]')];
-  const syncChips = () => chips.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.serviceChoice === select?.value)));
   const chooseService = value => {
     if (!select || ![...select.options].some(option => option.value === value)) return;
     select.value = value;
-    select.dispatchEvent(new Event('change', { bubbles: true }));
-    syncChips();
   };
-  chips.forEach(button => button.addEventListener('click', () => chooseService(button.dataset.serviceChoice)));
-  select?.addEventListener('change', syncChips);
-  select?.form?.addEventListener('reset', () => requestAnimationFrame(syncChips));
-  document.querySelector('[data-more-services]')?.addEventListener('click', () => { select?.scrollIntoView({ block: 'center', behavior: reduced.matches ? 'auto' : 'smooth' }); select?.focus({ preventScroll: true }); });
-  syncChips();
 
   const goals = {
     leads: { title: 'Make the first impression count.', copy: 'A clear website helps people understand your business. Chatbots and digital marketing can support the next conversation.', keys: ['websites', 'chatbots', 'marketing'], service: 'AI-Powered Website', links: [['AI-powered websites', 'services/ai-websites.html'], ['AI chatbots', 'services/chatbots-voice.html'], ['Digital marketing', 'services/digital-marketing.html']] },
@@ -79,44 +69,102 @@
   const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (cards.length < 2) return;
 
+  // Extra previews keep the neighboring cards visible when the loop wraps.
+  const copy = card => {
+    const preview = card.cloneNode(true);
+    preview.removeAttribute('data-service');
+    preview.removeAttribute('aria-labelledby');
+    preview.querySelectorAll('[id]').forEach(child => child.removeAttribute('id'));
+    preview.inert = true;
+    preview.setAttribute('aria-hidden', 'true');
+    return preview;
+  };
+  const before = cards.slice(-2).map(copy);
+  const after = cards.slice(0, 2).map(copy);
+  rail.prepend(...before);
+  rail.append(...after);
+
+  const slides = [...before, ...cards, ...after];
+  const wrap = index => (index + cards.length) % cards.length;
+  const centeredLeft = slide => slide.offsetLeft + (slide.offsetWidth - rail.clientWidth) / 2;
+  const nearestSlide = () => {
+    const step = slides[1].offsetLeft - slides[0].offsetLeft;
+    const position = Math.round((rail.scrollLeft - centeredLeft(slides[0])) / step);
+    return Math.max(0, Math.min(slides.length - 1, position));
+  };
+
   const canObserve = 'IntersectionObserver' in window;
   let active = -1;
+  let activeSlide;
   let target = null;
   let visible = !canObserve;
   let hovered = false;
   let touching = false;
+  let settling = false;
+  let settleTimer;
   let autoplay;
+
   const schedule = () => {
     clearTimeout(autoplay);
-    if (!visible || document.hidden || reduced.matches || hovered || touching ||
+    if (!visible || document.hidden || reduced.matches || hovered || touching || settling ||
         carousel.querySelector(':focus-visible')) return;
-    autoplay = setTimeout(() => show((target ?? active) + 1), 1500);
+    autoplay = setTimeout(() => show(active + 1), 1500);
   };
-  const wrap = index => (index + cards.length) % cards.length;
-  const centeredLeft = card => card.offsetLeft + (card.offsetWidth - rail.clientWidth) / 2;
 
-  const setActive = index => {
+  const setActive = (index, slide = cards[index]) => {
+    if (activeSlide !== slide) {
+      activeSlide?.classList.remove('is-current');
+      slide.classList.add('is-current');
+      activeSlide = slide;
+    }
     if (target === index) target = null;
     if (active === index) return;
 
     if (active >= 0) {
-      cards[active].classList.remove('is-current');
       buttons[active].removeAttribute('aria-current');
       buttons[active].tabIndex = -1;
     }
     active = index;
-    cards[active].classList.add('is-current');
     buttons[active].setAttribute('aria-current', 'true');
     buttons[active].tabIndex = 0;
   };
 
+  const settle = () => {
+    if (touching) return;
+    const physical = nearestSlide();
+    const index = wrap(physical - before.length);
+    const slide = slides[physical];
+    if (slide !== cards[index]) {
+      rail.scrollTo({ left: centeredLeft(cards[index]), behavior: 'instant' });
+    }
+    target = null;
+    settling = false;
+    setActive(index);
+    schedule();
+  };
+
+  const waitForSettle = () => {
+    clearTimeout(autoplay);
+    clearTimeout(settleTimer);
+    settling = true;
+    settleTimer = setTimeout(settle, 100);
+  };
+
   const show = (index, smooth = true) => {
     const next = wrap(index);
-    const animate = smooth && !reduced.matches && Math.abs(next - active) <= 2;
+    const animate = smooth && !reduced.matches && Math.abs(index - active) <= 2;
+    const slide = animate ? slides[before.length + index] : cards[next];
     target = next;
-    rail.scrollTo({ left: centeredLeft(cards[next]), behavior: animate ? 'smooth' : 'instant' });
-    if (!animate) setActive(next);
-    schedule();
+    if (animate && Math.abs(rail.scrollLeft - centeredLeft(slide)) > 1) {
+      waitForSettle();
+      rail.scrollTo({ left: centeredLeft(slide), behavior: 'smooth' });
+    } else {
+      clearTimeout(settleTimer);
+      settling = false;
+      rail.scrollTo({ left: centeredLeft(cards[next]), behavior: 'instant' });
+      setActive(next);
+      schedule();
+    }
   };
 
   const buttons = cards.map((card, index) => {
@@ -137,14 +185,12 @@
   });
   dots.hidden = false;
   carousel.classList.add('is-ready');
-  // Start with websites in the center and a preview on either side.
   show(1, false);
 
   rail.addEventListener('scroll', () => {
-    const step = cards[1].offsetLeft - cards[0].offsetLeft;
-    const nearest = Math.round((rail.scrollLeft - centeredLeft(cards[0])) / step);
-    setActive(Math.max(0, Math.min(cards.length - 1, nearest)));
-    schedule();
+    const physical = nearestSlide();
+    setActive(wrap(physical - before.length), slides[physical]);
+    waitForSettle();
   }, { passive: true });
   carousel.addEventListener('pointerenter', event => {
     if (event.pointerType !== 'mouse') return;
@@ -165,7 +211,7 @@
   const releaseTouch = () => {
     if (!touching) return;
     touching = false;
-    schedule();
+    waitForSettle();
   };
   window.addEventListener('pointerup', releaseTouch);
   window.addEventListener('pointercancel', releaseTouch);
@@ -244,7 +290,7 @@
     timer = setTimeout(() => {
       showStep((active + 1) % steps.length);
       schedule();
-    }, 2400);
+    }, 2200);
   };
 
   steps.forEach((button, index) => button.addEventListener('click', () => {

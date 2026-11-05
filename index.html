@@ -599,11 +599,6 @@
 .intent-home #why .why-card h3 { font-size:1.125rem; }
 .intent-home #why .why-card p { font-size:.875rem; line-height:1.8; color:#47566e; }
 .intent-home #contact .section__head { max-width:760px; }
-.hp-service-choices { padding:0 0 1.25rem; margin:0 0 1.25rem; border:0; border-bottom:1px solid #e1e8f3; min-width:0; }
-.hp-service-choices legend { color:#334b70; font-size:.75rem; font-weight:600; padding:0 0 .75rem; }
-.hp-service-choices > div { display:flex; flex-wrap:wrap; gap:.5rem; }
-.hp-service-choices button { display:inline-flex; align-items:center; min-height:40px; padding:.55rem .75rem; background:#f7f9fc; border:1px solid #d3dff0; border-radius:999px; color:#47566e; font-size:.6875rem; cursor:pointer; }
-.hp-service-choices button[aria-pressed='true'] { background:#edf3ff; border-color:#8dadE8; color:#194ab5; }
 .intent-home #contact .contact-channel { border-radius:14px; }
 .intent-home #contact textarea { min-height:125px; }
 .intent-home .footer { background:#102443; border-top:1px solid #2b4368; color:#c2d1e7; --c-white:#fff; --c-body:#c2d1e7; --c-muted:#afc2de; }
@@ -654,7 +649,7 @@
  .intent-home .home-service-cta__actions .btn { width:100%; }
 }
 @media (prefers-reduced-motion:no-preference) {
- .hp-goal-options a, .hp-fix-stack a, .hp-project, .hp-project-visual, .hp-service-choices button, .hp-proof-names a { transition:transform 200ms ease,border-color 200ms ease,box-shadow 200ms ease,color 200ms ease; }
+ .hp-goal-options a, .hp-fix-stack a, .hp-project, .hp-project-visual, .hp-proof-names a { transition:transform 200ms ease,border-color 200ms ease,box-shadow 200ms ease,color 200ms ease; }
  .hp-hero-visual { animation:hp-arrive 800ms ease-out both; }
  @keyframes hp-arrive { from { translate:0 12px; opacity:.8; } to { translate:0 0; opacity:1; } }
 }
@@ -1199,19 +1194,19 @@
     radial-gradient(ellipse at 100% 0, var(--card-glow), transparent 58%),
     linear-gradient(145deg, var(--card-light) 6%, var(--card-dark) 94%);
 }
-.home-services-carousel__rail .home-service-card:nth-child(4n + 1) {
+.home-services-carousel__rail .home-service-card[data-service-palette="teal"] {
   --card-light: #08716e;
   --card-dark: #153753;
   --card-glow: #42d9cc70;
   --card-edge: #8ff1d982;
 }
-.home-services-carousel__rail .home-service-card:nth-child(4n + 3) {
+.home-services-carousel__rail .home-service-card[data-service-palette="violet"] {
   --card-light: #6634bd;
   --card-dark: #302456;
   --card-glow: #c390ff75;
   --card-edge: #d4acff8f;
 }
-.home-services-carousel__rail .home-service-card:nth-child(4n) {
+.home-services-carousel__rail .home-service-card[data-service-palette="rose"] {
   --card-light: #9d346d;
   --card-dark: #412855;
   --card-glow: #ffa48a6e;
@@ -1314,7 +1309,6 @@
 .home-contact-fields { min-width: 0; display: grid; gap: .75rem; margin: 0; padding: 0; border: 0; }
 .home-contact-fields legend { padding: 0; margin-bottom: .55rem; font-weight: 750; color: #1c3154; }
 .home-contact-fields--project { padding-top: .65rem; border-top: 1px solid #dbe4f3; }
-.home-contact-fields--project legend { padding-inline-end: .55rem; }
 .next-home #contact .home-contact-form input,
 .next-home #contact .home-contact-form select,
 .next-home #contact .home-contact-form textarea { min-height: 44px; border-color: #adbed9; border-radius: 8px; background: #fcfdff; }
@@ -1374,151 +1368,59 @@
           <details class="site-nav__services">
             <summary class="site-nav__link">Services</summary>
             <div class="site-nav__services-panel">
-              <div class="site-nav__tabs" role="tablist" aria-label="Service categories" hidden>
-                <button type="button" role="tab" id="nav-services-build" data-nav-tab="build" aria-controls="nav-panel-services-build" aria-selected="true" tabindex="0">Build &amp; Software</button>
-                <button type="button" role="tab" id="nav-services-automation" data-nav-tab="automation" aria-controls="nav-panel-services-automation" aria-selected="false" tabindex="-1">Automation &amp; Growth</button>
-                <button type="button" role="tab" id="nav-services-billing" data-nav-tab="billing" aria-controls="nav-panel-services-billing" aria-selected="false" tabindex="-1">Billing by Industry</button>
-                <button type="button" role="tab" id="nav-services-engineering" data-nav-tab="engineering" aria-controls="nav-panel-services-engineering" aria-selected="false" tabindex="-1">AI &amp; Engineering</button>
-                <button type="button" role="tab" id="nav-services-catalog" data-nav-tab="catalog" aria-controls="nav-panel-services-catalog" aria-selected="false" tabindex="-1">Specialized Services</button>
-              </div>
-              <div role="tabpanel" id="nav-panel-services-build" aria-labelledby="nav-services-build">
-                <ul class="site-nav__service-links">
-                  <li><a href="services/ai-websites.html">AI-Powered Websites</a></li>
-                  <li><a href="services/software-development.html">Custom Software Development</a></li>
-                  <li><a href="services/software-development/crm-development.html">CRM Development</a></li>
-                  <li><a href="services/software-development/erp-development.html">ERP Development</a></li>
-                  <li><a href="services/software-development/hrms-development.html">HRMS Development</a></li>
-                  <li><a href="services/software-development/inventory-management-software.html">Inventory Management</a></li>
-                  <li><a href="services/software-development/lms-development.html">LMS Development</a></li>
-                  <li><a href="services/software-development/property-management-software.html">Property Management</a></li>
-                  <li><a href="services/software-development/helpdesk-support-software.html">Help Desk Software</a></li>
-                  <li><a href="services/software-development/ai-agents-development.html">AI Agents Development</a></li>
-                  <li><a href="services/software-development/ecommerce-platform-development.html">E-Commerce Platform Development</a></li>
-                  <li><a href="services/software-development/business-intelligence-dashboard-development.html">BI &amp; Analytics Dashboard</a></li>
-                  <li><a href="services/software-development/fleet-management-software.html">Fleet Management Software</a></li>
-                  <li><a href="services/software-development/saas-platform-development.html">SaaS Platform Development</a></li>
-                  <li><a href="services/software-development/construction-real-estate-billing-software.html">Construction &amp; Real Estate Billing</a></li>
-                  <li><a href="services/software-development/document-management-system.html">Document Management System</a></li>
-                  <li><a href="services/software-development/customer-portal-development.html">Customer &amp; Vendor Portal</a></li>
-                  <li><a href="services/mobile-apps.html">Mobile App Development</a></li>
-                </ul>
-              </div>
-              <div role="tabpanel" id="nav-panel-services-automation" aria-labelledby="nav-services-automation" hidden>
-                <ul class="site-nav__service-links">
-                  <li><a href="services/ai-automation.html">AI Business Automation</a></li>
-                  <li><a href="services/chatbots-voice.html">AI Chatbots &amp; Voice Assistants</a></li>
-                  <li><a href="services/ai-consulting.html">AI Consulting</a></li>
-                  <li><a href="services/digital-marketing.html">Digital Marketing &amp; Branding</a></li>
-                  <li><a href="services/cloud-devops.html">Cloud &amp; DevOps Solutions</a></li>
-                  <li><a href="services/cyber-security.html">Cyber Security Solutions</a></li>
-                </ul>
-              </div>
-              <div role="tabpanel" id="nav-panel-services-billing" aria-labelledby="nav-services-billing" hidden>
-                <ul class="site-nav__service-links">
-                  <li><a href="services/billing-software/salon-spa-billing-software.html">Salon &amp; Spa</a></li>
-                  <li><a href="services/billing-software/hospital-clinic-management-software.html">Hospital &amp; Clinic</a></li>
-                  <li><a href="services/billing-software/retail-shop-billing-software.html">Retail / Shop</a></li>
-                  <li><a href="services/billing-software/restaurant-cafe-billing-software.html">Restaurant &amp; Cafe</a></li>
-                  <li><a href="services/billing-software/manufacturing-management-software.html">Manufacturing</a></li>
-                  <li><a href="services/billing-software/jewellery-shop-billing-software.html">Jewellery Shop</a></li>
-                  <li><a href="services/billing-software/textile-cloth-store-billing-software.html">Textile &amp; Cloth Store</a></li>
-                  <li><a href="services/billing-software/fashion-apparel-retail-billing-software.html">Fashion &amp; Apparel Retail</a></li>
-                  <li><a href="services/billing-software/pharmacy-medical-store-billing-software.html">Pharmacy &amp; Medical Store</a></li>
-                  <li><a href="services/billing-software/gym-fitness-studio-billing-software.html">Gym &amp; Fitness Studio</a></li>
-                  <li><a href="services/billing-software/automobile-garage-billing-software.html">Automobile Garage</a></li>
-                  <li><a href="services/billing-software/hotel-lodge-billing-software.html">Hotel &amp; Lodge</a></li>
-                  <li><a href="services/billing-software/wholesale-distributor-billing-software.html">Wholesale &amp; Distributor</a></li>
-                  <li><a href="services/billing-software/coaching-school-fee-management-software.html">Coaching &amp; School Fee</a></li>
-                  <li><a href="services/billing-software/event-banquet-booking-software.html">Event &amp; Banquet Hall</a></li>
-                  <li><a href="services/billing-software/rental-business-billing-software.html">Rental Business</a></li>
-                  <li><a href="services/billing-software.html">All Billing Software Industries</a></li>
-                </ul>
-              </div>
-              <div role="tabpanel" id="nav-panel-services-engineering" aria-labelledby="nav-services-engineering" hidden>
-                <ul class="site-nav__service-links">
-                  <li><a href="services/ai-engineering/ai-knowledge-assistants.html">AI Knowledge Assistants</a></li>
-                  <li><a href="services/ai-engineering/document-ai-data-extraction.html">Document AI &amp; Data Extraction</a></li>
-                  <li><a href="services/ai-engineering/computer-vision-solutions.html">Computer Vision Solutions</a></li>
-                  <li><a href="services/ai-engineering/predictive-analytics-forecasting.html">Predictive Analytics &amp; Forecasting</a></li>
-                  <li><a href="services/ai-engineering/custom-ml-model-development.html">Custom ML Model Development</a></li>
-                  <li><a href="services/ai-engineering/mlops-ai-model-deployment.html">MLOps &amp; AI Model Deployment</a></li>
-                  <li><a href="services/ai-engineering/generative-ai-applications.html">Generative AI Applications</a></li>
-                  <li><a href="services/ai-engineering/api-development-integrations.html">API Development &amp; Integrations</a></li>
-                  <li><a href="services/ai-engineering/legacy-software-modernisation.html">Legacy Software Modernisation</a></li>
-                  <li><a href="services/ai-engineering/data-engineering-migration.html">Data Engineering &amp; Migration</a></li>
-                  <li><a href="services/ai-engineering/software-testing-qa.html">Software Testing &amp; QA</a></li>
-                  <li><a href="services/ai-engineering/website-software-maintenance.html">Website &amp; Software Maintenance</a></li>
-                  <li><a href="services/ai-engineering/ui-ux-design-product-prototyping.html">UI/UX Design &amp; Product Prototyping</a></li>
-                  <li><a href="services/ai-engineering/index.html">Explore AI &amp; Engineering</a></li>
-                </ul>
-              </div>
-              <div role="tabpanel" id="nav-panel-services-catalog" aria-labelledby="nav-services-catalog" hidden>
-                <div class="site-nav__tabs site-nav__tabs--secondary" role="tablist" aria-label="Specialized service categories" hidden>
-                  <button type="button" role="tab" id="nav-catalog-web" data-nav-tab="web" aria-controls="nav-panel-catalog-web" aria-selected="true" tabindex="0">Web &amp; Commerce</button>
-                  <button type="button" role="tab" id="nav-catalog-operations" data-nav-tab="operations" aria-controls="nav-panel-catalog-operations" aria-selected="false" tabindex="-1">Operations</button>
-                  <button type="button" role="tab" id="nav-catalog-infrastructure" data-nav-tab="infrastructure" aria-controls="nav-panel-catalog-infrastructure" aria-selected="false" tabindex="-1">Data, Cloud &amp; Security</button>
-                  <button type="button" role="tab" id="nav-catalog-growth" data-nav-tab="growth" aria-controls="nav-panel-catalog-growth" aria-selected="false" tabindex="-1">Growth &amp; Emerging Tech</button>
-                </div>
-                <div role="tabpanel" id="nav-panel-catalog-web" aria-labelledby="nav-catalog-web">
-                  <ul class="site-nav__service-links">
-                    <li><a href="services/more_services/web-development/full-stack-development.html">Full-stack development</a></li>
-                    <li><a href="services/more_services/web-development/progressive-web-app-pwa-development.html">Progressive web apps</a></li>
-                    <li><a href="services/more_services/web-development/headless-cms-development.html">Headless CMS</a></li>
-                    <li><a href="services/more_services/web-development/website-accessibility-optimization.html">Website accessibility</a></li>
-                    <li><a href="services/more_services/mobile-apps/cross-platform-app-development.html">Cross-platform apps</a></li>
-                    <li><a href="services/more_services/mobile-apps/offline-first-application-development.html">Offline-first apps</a></li>
-                    <li><a href="services/more_services/ecommerce/b2b-e-commerce-development.html">B2B e-commerce</a></li>
-                    <li><a href="services/more_services/ecommerce/headless-commerce-development.html">Headless commerce</a></li>
-                    <li><a href="services/more_services/ecommerce/multi-vendor-marketplace-development.html">Multi-vendor marketplaces</a></li>
+              <div class="site-nav__service-groups">
+                <div class="site-nav__service-group">
+                  <p>Websites &amp; apps</p>
+                  <ul class="site-nav__service-links" aria-label="Websites &amp; apps">
+                    <li><a href="services/ai-websites.html">AI-powered websites</a></li>
+                    <li><a href="services/mobile-apps.html">Mobile apps</a></li>
+                    <li><a href="services/software-development/ecommerce-platform-development.html">E-commerce development</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/web-development/full-stack-development.html">Full-stack development</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/mobile-apps/cross-platform-app-development.html">Cross-platform apps</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/ecommerce/headless-commerce-development.html">Headless commerce</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/web-development/website-accessibility-optimization.html">Website accessibility</a></li>
                   </ul>
                 </div>
-                <div role="tabpanel" id="nav-panel-catalog-operations" aria-labelledby="nav-catalog-operations" hidden>
-                  <ul class="site-nav__service-links">
-                    <li><a href="services/more_services/automation/workflow-automation-development.html">Workflow automation</a></li>
-                    <li><a href="services/more_services/automation/robotic-process-automation-rpa.html">Robotic process automation</a></li>
-                    <li><a href="services/more_services/automation/no-code-low-code-application-development.html">Low-code applications</a></li>
-                    <li><a href="services/more_services/automation/system-integration-automation.html">Systems integration</a></li>
-                    <li><a href="services/more_services/business-software/enterprise-resource-planning-customization.html">ERP customization</a></li>
-                    <li><a href="services/more_services/business-software/point-of-sale-pos-software.html">Point-of-sale software</a></li>
-                    <li><a href="services/more_services/business-software/payroll-management-software.html">Payroll software</a></li>
-                    <li><a href="services/more_services/business-software/warehouse-management-system-wms.html">Warehouse management</a></li>
-                    <li><a href="services/more_services/industry-solutions/healthcare-software-development.html">Healthcare software</a></li>
-                    <li><a href="services/more_services/industry-solutions/logistics-delivery-management-software.html">Logistics &amp; delivery software</a></li>
+                <div class="site-nav__service-group">
+                  <p>Business software</p>
+                  <ul class="site-nav__service-links" aria-label="Business software">
+                    <li><a href="services/software-development.html">Custom software</a></li>
+                    <li><a href="services/billing-software.html">Billing by industry</a></li>
+                    <li><a href="services/software-development/crm-development.html">CRM development</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/erp-development.html">ERP development</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/inventory-management-software.html">Inventory management</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/business-software/payroll-management-software.html">Payroll software</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/business-intelligence-dashboard-development.html">Data dashboards</a></li>
                   </ul>
                 </div>
-                <div role="tabpanel" id="nav-panel-catalog-infrastructure" aria-labelledby="nav-catalog-infrastructure" hidden>
-                  <ul class="site-nav__service-links">
-                    <li><a href="services/more_services/data-analytics/data-warehouse-development.html">Data warehouses</a></li>
-                    <li><a href="services/more_services/data-analytics/real-time-data-processing.html">Real-time data processing</a></li>
-                    <li><a href="services/more_services/data-analytics/customer-data-platform-development.html">Customer data platforms</a></li>
-                    <li><a href="services/more_services/cloud-operations/cloud-migration-services.html">Cloud migration</a></li>
-                    <li><a href="services/more_services/cloud-operations/containerization-kubernetes-services.html">Containers &amp; Kubernetes</a></li>
-                    <li><a href="services/more_services/cloud-operations/serverless-application-development.html">Serverless applications</a></li>
-                    <li><a href="services/more_services/cloud-operations/infrastructure-as-code-iac.html">Infrastructure as code</a></li>
-                    <li><a href="services/more_services/cloud-operations/cloud-cost-optimization.html">Cloud cost optimization</a></li>
-                    <li><a href="services/more_services/cybersecurity/penetration-testing.html">Penetration testing</a></li>
-                    <li><a href="services/more_services/cybersecurity/zero-trust-security-implementation.html">Zero trust security</a></li>
-                    <li><a href="services/more_services/cybersecurity/devsecops-implementation.html">DevSecOps</a></li>
+                <div class="site-nav__service-group">
+                  <p>AI &amp; automation</p>
+                  <ul class="site-nav__service-links" aria-label="AI &amp; automation">
+                    <li><a href="services/ai-automation.html">AI business automation</a></li>
+                    <li><a href="services/chatbots-voice.html">Chatbots &amp; voice assistants</a></li>
+                    <li><a href="services/ai-engineering/index.html">AI engineering</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/automation/workflow-automation-development.html">Workflow automation</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-engineering/ai-knowledge-assistants.html">AI knowledge assistants</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-engineering/document-ai-data-extraction.html">Document AI</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-consulting.html">AI consulting</a></li>
                   </ul>
                 </div>
-                <div role="tabpanel" id="nav-panel-catalog-growth" aria-labelledby="nav-catalog-growth" hidden>
-                  <ul class="site-nav__service-links">
-                    <li><a href="services/more_services/consulting/minimum-viable-product-mvp-development.html">MVP development</a></li>
-                    <li><a href="services/more_services/consulting/digital-transformation-consulting.html">Digital transformation</a></li>
-                    <li><a href="services/more_services/consulting/software-architecture-system-design.html">Software architecture</a></li>
-                    <li><a href="services/more_services/quality-engineering/test-automation-services.html">Test automation</a></li>
-                    <li><a href="services/more_services/quality-engineering/performance-load-testing.html">Performance &amp; load testing</a></li>
-                    <li><a href="services/more_services/digital-growth/local-seo-services.html">Local SEO</a></li>
-                    <li><a href="services/more_services/digital-growth/conversion-rate-optimization-cro.html">Conversion optimization</a></li>
-                    <li><a href="services/more_services/emerging-tech/iot-platform-development.html">IoT platforms</a></li>
-                    <li><a href="services/more_services/emerging-tech/digital-twin-development.html">Digital twins</a></li>
-                    <li><a href="services/more_services/emerging-tech/augmented-reality-ar-development.html">Augmented reality</a></li>
+                <div class="site-nav__service-group">
+                  <p>Cloud, security &amp; growth</p>
+                  <ul class="site-nav__service-links" aria-label="Cloud, security &amp; growth">
+                    <li><a href="services/cloud-devops.html">Cloud &amp; DevOps</a></li>
+                    <li><a href="services/cyber-security.html">Cyber security</a></li>
+                    <li><a href="services/digital-marketing.html">Digital marketing</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/cloud-migration-services.html">Cloud migration</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/containerization-kubernetes-services.html">Containers &amp; Kubernetes</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cybersecurity/penetration-testing.html">Penetration testing</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/digital-growth/local-seo-services.html">Local SEO</a></li>
                   </ul>
                 </div>
               </div>
               <div class="site-nav__service-footer">
-                <a href="services/index.html">Services overview</a>
-                <a class="site-nav__catalog" href="services/more_services/index.html">View full service catalog <span aria-hidden="true">↗</span></a>
+                <a href="services/index.html">Services overview <span aria-hidden="true">→</span></a>
+                <a href="services/more_services/index.html">Explore all 177 catalog services <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </details>
@@ -1713,14 +1615,6 @@
               </div>
             </figure>
           </div>
-          <div class="hero-showcase__controls" data-hero-controls hidden>
-            <div role="group" aria-label="Choose a demo">
-              <button type="button" aria-controls="hero-automation" aria-pressed="true">Automation</button>
-              <button type="button" aria-controls="hero-websites" aria-pressed="false">Websites</button>
-              <button type="button" aria-controls="hero-billing" aria-pressed="false">Billing</button>
-            </div>
-            
-          </div>
         </section>
       </div><div class="nx-hero-bottom"><span>WE DESIGN. WE ENGINEER. WE CONNECT.</span><a href="#featured-work">Explore the work <span>↘</span></a></div></div></section>
 
@@ -1733,7 +1627,7 @@
         <div class="home-services-carousel" data-service-carousel>
           <div class="home-services-carousel__stage">
             <div class="home-services-carousel__rail" id="core-service-cards" role="group" aria-label="Core service cards" tabindex="0">
-              <article class="home-service-card" data-service="automation" aria-labelledby="offer-automation">
+              <article class="home-service-card" data-service="automation" data-service-palette="teal" aria-labelledby="offer-automation">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 10-12h-7l1-8z"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">01 / 12</span>
@@ -1742,7 +1636,7 @@
                 <p class="home-service-card__summary">Connect your tools and automate follow-ups, data entry, and recurring tasks.</p>
                 <a class="hp-text-link" href="services/ai-automation.html" aria-label="Explore AI automation">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="websites" aria-labelledby="offer-websites">
+              <article class="home-service-card" data-service="websites" data-service-palette="blue" aria-labelledby="offer-websites">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h20v14H2zM2 8h20M8 22h8m-4-4v4"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">02 / 12</span>
@@ -1751,7 +1645,7 @@
                 <p class="home-service-card__summary">Build a fast website that explains what you offer and makes it easy to enquire or book.</p>
                 <a class="hp-text-link" href="services/ai-websites.html" aria-label="Explore AI-powered websites">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="billing" aria-labelledby="offer-billing">
+              <article class="home-service-card" data-service="billing" data-service-palette="violet" aria-labelledby="offer-billing">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3zm3 5h6m-6 4h6m-6 4h3"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">03 / 12</span>
@@ -1760,7 +1654,7 @@
                 <p class="home-service-card__summary">Create GST invoices, track stock, and see daily sales in one place.</p>
                 <a class="hp-text-link" href="services/billing-software.html" aria-label="Explore Billing &amp; inventory">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="software" aria-labelledby="offer-software">
+              <article class="home-service-card" data-service="software" data-service-palette="rose" aria-labelledby="offer-software">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">04 / 12</span>
@@ -1769,7 +1663,7 @@
                 <p class="home-service-card__summary">Build tools around the work your team does every day, from internal portals to enterprise systems.</p>
                 <a class="hp-text-link" href="services/software-development.html" aria-label="Explore Custom software">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="chatbots" aria-labelledby="offer-chatbots">
+              <article class="home-service-card" data-service="chatbots" data-service-palette="teal" aria-labelledby="offer-chatbots">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H4l1.8-4a7.5 7.5 0 1 1 14.2-3.5zM8 12h.01m4-.01h.01m4-.01h.01"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">05 / 12</span>
@@ -1778,7 +1672,7 @@
                 <p class="home-service-card__summary">Answer questions, take bookings, and hand complex requests to your team.</p>
                 <a class="hp-text-link" href="services/chatbots-voice.html" aria-label="Explore Chatbots &amp; voice assistants">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="mobile" aria-labelledby="offer-mobile">
+              <article class="home-service-card" data-service="mobile" data-service-palette="blue" aria-labelledby="offer-mobile">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 16h2"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">06 / 12</span>
@@ -1787,7 +1681,7 @@
                 <p class="home-service-card__summary">Build iOS and Android apps for customers, field teams, and day-to-day operations.</p>
                 <a class="hp-text-link" href="services/mobile-apps.html" aria-label="Explore Mobile app development">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="ecommerce" aria-labelledby="offer-ecommerce">
+              <article class="home-service-card" data-service="ecommerce" data-service-palette="violet" aria-labelledby="offer-ecommerce">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l1 12H3L4 9zm4 0V7a4 4 0 1 1 8 0v2"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">07 / 12</span>
@@ -1796,7 +1690,7 @@
                 <p class="home-service-card__summary">Connect storefronts, payments, inventory, and order management in one online shop.</p>
                 <a class="hp-text-link" href="services/software-development/ecommerce-platform-development.html" aria-label="Explore E-commerce platforms">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="crm" aria-labelledby="offer-crm">
+              <article class="home-service-card" data-service="crm" data-service-palette="rose" aria-labelledby="offer-crm">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3zM12 8h5m-5 4h5m-5 4h5m-8-6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4 6a2.5 2.5 0 0 1 5 0"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">08 / 12</span>
@@ -1805,7 +1699,7 @@
                 <p class="home-service-card__summary">Keep contacts, sales pipelines, and follow-up tasks in one shared workspace.</p>
                 <a class="hp-text-link" href="services/software-development/crm-development.html" aria-label="Explore CRM development">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="analytics" aria-labelledby="offer-analytics">
+              <article class="home-service-card" data-service="analytics" data-service-palette="teal" aria-labelledby="offer-analytics">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 17v-4m4 4V9m4 8v-6m4 6V5"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">09 / 12</span>
@@ -1814,7 +1708,7 @@
                 <p class="home-service-card__summary">Bring sales, stock, and operations data together so teams can spot changes early.</p>
                 <a class="hp-text-link" href="services/software-development/business-intelligence-dashboard-development.html" aria-label="Explore BI &amp; analytics dashboards">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="cloud" aria-labelledby="offer-cloud">
+              <article class="home-service-card" data-service="cloud" data-service-palette="blue" aria-labelledby="offer-cloud">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4 4 0 1 1 1-7.9 5 5 0 0 1 9.5 1.4A3.5 3.5 0 1 1 18 17H7zm5-3v8m-3-3 3 3 3-3"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">10 / 12</span>
@@ -1823,7 +1717,7 @@
                 <p class="home-service-card__summary">Set up repeatable deployments, monitoring, and reliable cloud infrastructure.</p>
                 <a class="hp-text-link" href="services/cloud-devops.html" aria-label="Explore Cloud &amp; DevOps">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="security" aria-labelledby="offer-security">
+              <article class="home-service-card" data-service="security" data-service-palette="violet" aria-labelledby="offer-security">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4v5c0 5.2-3 8.7-8 11-5-2.3-8-5.8-8-11V6l8-4zm-3 10 2 2 4-4"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">11 / 12</span>
@@ -1832,7 +1726,7 @@
                 <p class="home-service-card__summary">Find vulnerabilities and strengthen the systems that handle your business data.</p>
                 <a class="hp-text-link" href="services/cyber-security.html" aria-label="Explore Cyber security">Explore service <span aria-hidden="true">↗</span></a>
               </article>
-              <article class="home-service-card" data-service="marketing" aria-labelledby="offer-marketing">
+              <article class="home-service-card" data-service="marketing" data-service-palette="rose" aria-labelledby="offer-marketing">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l10 4V6L8 10H4zm4 4 2 6h3m8-10v4"/></svg></span>
                   <span class="home-service-card__number" aria-hidden="true">12 / 12</span>
@@ -2282,17 +2176,7 @@
               <div class="form__field"><label for="cf-email">Email address</label><input id="cf-email" name="email" type="email" autocomplete="email" required aria-describedby="cf-email-error"><span class="form__error" id="cf-email-error">Please enter a valid email address.</span></div>
             </fieldset>
 
-            <fieldset class="home-contact-fields home-contact-fields--project">
-              <legend>Project details</legend>
-              <div class="hp-service-choices">
-                <div role="group" aria-label="Popular service choices">
-                  <button type="button" data-service-choice="AI-Powered Website" aria-pressed="false">Website</button>
-                  <button type="button" data-service-choice="Custom Software" aria-pressed="false">Custom software</button>
-                  <button type="button" data-service-choice="Billing Software" aria-pressed="false">Billing</button>
-                  <button type="button" data-service-choice="AI Business Automation" aria-pressed="false">Automation</button>
-                  <button type="button" data-more-services>More services <span aria-hidden="true">↓</span></button>
-                </div>
-              </div>
+            <div class="home-contact-fields home-contact-fields--project">
               <div class="form__field">
                 <label for="cf-service">Service <span class="home-contact-optional">(optional)</span></label>
                 <select id="cf-service" name="service">
@@ -2305,7 +2189,7 @@
                 <textarea id="cf-message" name="message" placeholder="Tell us what you need, who will use it, and any tools you already have." required aria-describedby="cf-message-error"></textarea>
                 <span class="form__error" id="cf-message-error">Please tell us a little about your project.</span>
               </div>
-            </fieldset>
+            </div>
             <label class="form__hp" aria-hidden="true">Leave this field empty <input type="text" name="website" tabindex="-1" autocomplete="off"></label>
             <div class="home-contact-form__actions">
               <button class="btn btn--primary" type="submit">Send project brief</button>

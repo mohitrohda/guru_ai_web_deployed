@@ -20,38 +20,6 @@
     if (!open) services.open = false;
   }
 
-  header.querySelectorAll("[role=tablist]").forEach(tabList => {
-    const tabs = [...tabList.querySelectorAll("[role=tab]")];
-    const panels = tabs.map(tab => document.getElementById(tab.getAttribute("aria-controls")));
-
-    function select(index) {
-      tabs.forEach((tab, position) => {
-        const selected = position === index;
-        tab.setAttribute("aria-selected", String(selected));
-        tab.tabIndex = selected ? 0 : -1;
-        panels[position].hidden = !selected;
-      });
-    }
-
-    tabs.forEach((tab, index) => tab.addEventListener("click", () => select(index)));
-    tabList.addEventListener("keydown", event => {
-      const index = tabs.indexOf(event.target);
-      if (index < 0) return;
-
-      const positions = {
-        ArrowLeft: (index + tabs.length - 1) % tabs.length,
-        ArrowRight: (index + 1) % tabs.length,
-        Home: 0,
-        End: tabs.length - 1,
-      };
-      if (!Object.hasOwn(positions, event.key)) return;
-      event.preventDefault();
-      select(positions[event.key]);
-      tabs[positions[event.key]].focus();
-    });
-    tabList.hidden = false;
-  });
-
   toggle.addEventListener("click", () => setMenu(!menuIsOpen()));
   desktop.addEventListener("change", () => setMenu(false));
 
