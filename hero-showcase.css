@@ -1,0 +1,80 @@
+.nx-hero-showcase {
+  min-width: 0;
+  width: 100%;
+}
+
+.hero-showcase__stage {
+  display: grid;
+  isolation: isolate;
+  min-width: 0;
+}
+
+.hero-showcase__stage > .hero-showcase__panel {
+  grid-area: 1 / 1;
+  max-width: none;
+  pointer-events: auto;
+}
+
+.hero-showcase__stage > .hero-showcase__panel[hidden],
+.hero-showcase__controls[hidden],
+.hero-showcase__controls [hidden] {
+  display: none;
+}
+
+.hero-showcase__panel:not(.is-active) {
+  visibility: hidden;
+}
+
+.hero-showcase__demo .guru-crm__meter span { width: var(--hero-meter); }
+
+.hero-showcase__controls,
+.hero-showcase__controls > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+
+.hero-showcase__controls {
+  justify-content: center;
+  padding-top: 0.9rem;
+}
+
+.hero-showcase__controls button {
+  min-height: 44px;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid #cad4e6;
+  border-radius: 8px;
+  background: #fff;
+  color: #243755;
+  cursor: pointer;
+  font: 650 0.8rem/1.2 var(--f-body, system-ui);
+}
+
+.hero-showcase__controls button[aria-pressed="true"] {
+  border-color: #263e8b;
+  background: #263e8b;
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .hero-showcase__controls > div { width: 100%; }
+  .hero-showcase__controls button { flex: 1 1 0; padding-inline: .45rem; }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-showcase__panel.is-active {
+    animation: hero-showcase-enter 340ms ease-out both;
+  }
+
+  .nx-hero-showcase .hero-showcase__demo.is-in-view .guru-crm__toast {
+    animation: hero-showcase-confirm 450ms 1s ease-out both, guru-crm-toast 4s 1s ease-in-out infinite;
+  }
+
+  @keyframes hero-showcase-enter {
+    from { opacity: 0; translate: 0 5px; }
+  }
+
+  @keyframes hero-showcase-confirm {
+    from { opacity: 0; translate: 0 10px; }
+  }
+}

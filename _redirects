@@ -1,0 +1,10 @@
+# GURU AI TECHNOLOGIES, Cloudflare Pages redirects
+
+# Canonical host (www → apex)
+https://www.guruaitechnologies.com/* https://guruaitechnologies.com/:splat 301
+
+# Friendly short paths
+/services   /#services   301
+/contact    /#contact    301
+/whatsapp   https://wa.me/918087695569?text=Hello%20GURU%20AI%20TECHNOLOGIES%2C%0A%0AI%20visited%20your%20website%20and%20would%20like%20to%20discuss%20a%20project.%0A%0AService%20required%3A%20%0ABusiness%20name%3A%20%0ARequirement%20in%20brief%3A%20%0A%0APlease%20guide%20me%20on%20the%20next%20steps.%20Thank%20you. 301
+/director.html   /about.html   301

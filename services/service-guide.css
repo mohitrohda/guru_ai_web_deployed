@@ -1,0 +1,89 @@
+/* Plain-language guides for the core service pages. */
+.service-guide {
+  padding-block: clamp(2.25rem, 5vw, 4.25rem);
+  border-block: 1px solid #e2e9f4;
+  background: linear-gradient(150deg, #f2f7ff, #f8fafc 65%);
+  scroll-margin-top: calc(var(--nav-h, 4.5rem) + 1rem);
+}
+
+.service-guide .service-guide__heading {
+  max-width: 46rem;
+  margin-block-end: clamp(1.25rem, 3vw, 2rem);
+}
+
+.service-guide .service-guide__eyebrow {
+  margin: 0 0 .5rem;
+  color: #224db5;
+  font-size: .76rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.service-guide .service-guide__title {
+  margin: 0 0 .75rem;
+  color: #132849;
+  font-size: clamp(1.65rem, 3.2vw, 2.55rem);
+  line-height: 1.15;
+  text-wrap: balance;
+}
+
+.service-guide .service-guide__intro {
+  margin: 0;
+  color: #3c516e;
+  line-height: 1.65;
+}
+
+.service-guide .service-guide__features {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(.75rem, 2vw, 1.25rem);
+}
+
+.service-guide .service-guide__card,
+.service-guide .service-guide__first-step {
+  min-width: 0;
+  padding: clamp(1rem, 2.5vw, 1.4rem);
+  border: 1px solid #d7e3f2;
+  border-radius: 13px;
+}
+
+.service-guide .service-guide__card {
+  background: #fff;
+}
+
+.service-guide .service-guide__card h3,
+.service-guide .service-guide__first-step h3 {
+  margin: 0 0 .45rem;
+  color: #162d51;
+  font-size: 1.05rem;
+  line-height: 1.35;
+}
+
+.service-guide .service-guide__card p,
+.service-guide .service-guide__first-step p {
+  margin: 0;
+  color: #3c516e;
+  font-size: .95rem;
+  line-height: 1.6;
+}
+
+.service-guide .service-guide__first-step {
+  display: grid;
+  grid-template-columns: minmax(0, 13rem) minmax(0, 1fr);
+  align-items: start;
+  gap: .6rem 1rem;
+  margin-block-start: 1rem;
+  background: #e8f1ff;
+}
+
+.service-guide .service-guide__first-step h3 {
+  margin: 0;
+}
+
+@media (max-width: 720px) {
+  .service-guide .service-guide__features,
+  .service-guide .service-guide__first-step {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
