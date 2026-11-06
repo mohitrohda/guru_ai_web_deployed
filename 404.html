@@ -98,9 +98,9 @@
 
   <header class="site-nav">
   <div class="site-nav__bar">
-    <a class="site-nav__brand" href="/index.html" aria-label="Guru AI Technologies home">
-      <img class="site-nav__brand-icon" src="/assets/icons/apple-touch-icon.png" width="40" height="40" alt="" decoding="async">
-      <span aria-hidden="true"><strong>GURU <em>AI</em></strong><small>TECHNOLOGIES</small></span>
+    <a class="site-nav__brand" href="/index.html" aria-label="GURU AI Technologies home">
+      <img class="site-nav__brand-icon" src="/assets/icons/apple-touch-icon.png" width="40" height="40" alt="GURU AI Technologies" decoding="async">
+      <span aria-hidden="true"><strong>GURU <em>AI</em></strong> <small>TECHNOLOGIES</small></span>
     </a>
     <a class="site-nav__browse" href="/services/index.html">Services</a>
     <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu" hidden>
@@ -164,19 +164,36 @@
               </div>
               <div class="site-nav__service-footer">
                 <a href="/services/index.html">Services overview <span aria-hidden="true">→</span></a>
-                <a href="/services/more_services/index.html">Explore all 177 catalog services <span aria-hidden="true">↗</span></a>
+                <a href="/services/more_services/index.html">View all services <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </details>
         </li>
-        <li><a class="site-nav__link" href="/industries/index.html">Industries</a></li>
+        <li class="site-nav__industries-item">
+          <details class="site-nav__industries">
+            <summary class="site-nav__link">Industries</summary>
+            <div class="site-nav__industries-panel">
+              <p>Explore by industry</p>
+              <ul class="site-nav__service-links" aria-label="Industries">
+                <li><a href="/industries/healthcare.html">Healthcare</a></li>
+                <li><a href="/industries/retail-fashion.html">Retail &amp; fashion</a></li>
+                <li><a href="/industries/hospitality-events.html">Hospitality &amp; events</a></li>
+                <li><a href="/industries/beauty-wellness.html">Beauty &amp; wellness</a></li>
+                <li><a href="/industries/manufacturing-trade.html">Manufacturing &amp; trade</a></li>
+                <li><a href="/industries/education-services.html">Education &amp; local services</a></li>
+              </ul>
+              <a class="site-nav__industry-all" href="/industries/index.html">All industries <span aria-hidden="true">→</span></a>
+            </div>
+          </details>
+        </li>
         <li><a class="site-nav__link" href="/case-studies/index.html">Case Studies</a></li>
         <li><a class="site-nav__link" href="/index.html#faq">FAQ</a></li>
         <li><a class="site-nav__link" href="/about.html">About</a></li>
-        <li class="site-nav__mobile-cta"><a class="site-nav__action" href="/index.html#contact">Start a Project</a></li>
+        <li><a class="site-nav__link" href="/index.html#contact">Contact</a></li>
+        <li class="site-nav__mobile-cta"><a class="site-nav__action" href="/index.html#contact-form">Start a Project</a></li>
       </ul>
     </nav>
-    <a class="site-nav__action site-nav__desktop-cta" href="/index.html#contact">Start a Project</a>
+    <a class="site-nav__action site-nav__desktop-cta" href="/index.html#contact-form">Start a Project</a>
   </div>
 </header>
 
@@ -197,5 +214,17 @@
   <footer>© <span id="y">2026</span> GURU AI TECHNOLOGIES · Pune</footer>
 
   <script defer src="/404.js"></script>
+  <details class="contact-dock" data-contact-dock>
+    <summary>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 14a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2zM8 9h8m-8 3h5"/></svg>
+      <span>Contact</span>
+    </summary>
+    <div class="contact-dock__panel" data-contact-options>
+      <p>How can we help?</p>
+      <a class="contact-dock__primary" href="https://wa.me/918087695569?text=Hello%20GURU%20AI%20TECHNOLOGIES%2C%20I%27d%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener">Message on WhatsApp <span aria-hidden="true">↗</span></a>
+      <a href="tel:+918087695569">Call +91 80876 95569</a>
+      <a href="/index.html#contact">Send a project brief</a>
+    </div>
+  </details>
 </body>
 </html>

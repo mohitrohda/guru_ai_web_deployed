@@ -11,7 +11,7 @@
    06. Accessibility
    07. Buttons
    08. Navbar
-   09. Loader · progress · to-top · floating stack
+   09. Scroll progress · to-top
    10. Cards
    11. Home — hero
    12. Home — sections
@@ -97,7 +97,7 @@
 
   /* Z-index registry */
   --z-nav: 100;  --z-progress: 110;  --z-float: 120;
-  --z-chatbot: 130;  --z-loader: 200;
+  --z-skip: 201;
 }
 
 /* ==========================================================================
@@ -311,7 +311,7 @@ p { max-width: 68ch; }
   position: absolute;
   top: -100%;
   left: var(--sp-4);
-  z-index: calc(var(--z-loader) + 1);
+  z-index: var(--z-skip);
   padding: var(--sp-3) var(--sp-5);
   background: var(--c-blue);
   color: #FFF;
@@ -359,7 +359,7 @@ p { max-width: 68ch; }
 .btn:active { transform: scale(0.975); }
 .btn svg { width: 1.05em; height: 1.05em; flex-shrink: 0; }
 
-.btn--primary { background: var(--c-blue); color: #FFF; }
+.btn--primary { background: #2458d6; color: #FFF; }
 .btn--primary:hover { background: var(--c-blue-deep); box-shadow: var(--shadow-glow); transform: translateY(-2px); }
 
 .btn--ghost { border: 1px solid var(--c-line-strong); color: var(--c-white); background: #FFFFFF; }
@@ -666,69 +666,6 @@ p { max-width: 68ch; }
   pointer-events: none;
 }
 
-.loader {
-  position: fixed;
-  inset: 0;
-  z-index: var(--z-loader);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--sp-5);
-  background: var(--c-void);
-  padding: var(--sp-5);
-  transition: opacity 480ms var(--ease-smooth), visibility 0s linear 480ms;
-  /* Hard, JS-independent safety net. script.js normally removes this loader
-     within ~2.5-3.3s (see the Boot section's dismissLoader), but that logic
-     lives entirely inside script.js — if that file is ever blocked, dropped
-     by a flaky connection, or never executes (e.g. opened via file:// where
-     cross-origin requests can behave unpredictably), there was previously
-     NO fallback and this full-screen overlay stayed up forever. This
-     animation force-hides it 5s after paint no matter what JS does. */
-  animation: loader-force-hide 1ms linear 5s forwards;
-}
-.loader.is-done { opacity: 0; visibility: hidden; pointer-events: none; }
-
-@keyframes loader-force-hide {
-  to { opacity: 0; visibility: hidden; pointer-events: none; }
-}
-
-.loader__word {
-  font-family: var(--f-display);
-  font-weight: 700;
-  font-size: clamp(1.5rem, 5vw, 2.25rem);
-  letter-spacing: 0.26em;
-  padding-left: 0.26em;
-  color: var(--c-white);
-  text-align: center;
-}
-
-.loader__beam {
-  width: min(200px, 60vw);
-  height: 1px;
-  background: var(--c-line);
-  position: relative;
-  overflow: hidden;
-}
-.loader__beam::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: var(--g-signal);
-  transform: translateX(-100%);
-  animation: loader-scan 1.1s var(--ease-smooth) infinite;
-}
-
-.loader__status {
-  font-family: var(--f-mono);
-  font-size: var(--fs-label);
-  letter-spacing: 0.18em;
-  color: var(--c-muted);
-  text-transform: uppercase;
-}
-
-@keyframes loader-scan { to { transform: translateX(100%); } }
-
 .to-top {
   position: fixed;
   left: var(--sp-4);
@@ -745,53 +682,15 @@ p { max-width: 68ch; }
   color: var(--c-blue);
   opacity: 0;
   visibility: hidden;
-  transform: translateY(8px);
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              border-color var(--t-fast),
-              visibility 0s linear var(--t-med);
+  transition: opacity 160ms ease-out, visibility 0s linear 160ms;
 }
 .to-top.is-visible {
-  opacity: 1; visibility: visible; transform: translateY(0);
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              border-color var(--t-fast), visibility 0s;
+  opacity: 1; visibility: visible;
+  transition: opacity 160ms ease-out, visibility 0s;
 }
 .to-top:hover { border-color: var(--c-blue); color: var(--c-blue); }
 .to-top svg { width: 18px; height: 18px; }
-
-.float-stack {
-  position: fixed;
-  right: var(--sp-4);
-  bottom: var(--sp-4);
-  z-index: var(--z-float);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: var(--sp-3);
-}
-
-.float-btn {
-  width: 50px; height: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--r-pill);
-  border: 1px solid var(--c-line);
-  background: #FFFFFF;
-  color: var(--c-blue);
-  box-shadow: var(--shadow-card);
-  transition: transform var(--t-fast) var(--ease-out),
-              box-shadow var(--t-med) var(--ease-out),
-              border-color var(--t-fast);
-}
-.float-btn:hover { transform: translateY(-3px); box-shadow: 0 14px 34px rgba(16, 33, 64, 0.14); }
-.float-btn svg { width: 21px; height: 21px; }
-
-.float-btn--whatsapp { color: var(--c-success); }
-.float-btn--whatsapp:hover { border-color: var(--c-success); box-shadow: 0 12px 30px rgba(22, 163, 74, 0.22); }
-.float-btn--call { color: var(--c-blue); }
-.float-btn--call:hover { border-color: var(--c-blue); box-shadow: var(--shadow-glow); }
+@media (max-width: 767px) { .to-top { display: none; } }
 
 /* ==========================================================================
    10. CARDS
@@ -815,7 +714,7 @@ p { max-width: 68ch; }
 /* Hover lift only where a pointer actually exists */
 @media (hover: none) {
   .card:hover { transform: none; }
-  .btn:hover, .float-btn:hover { transform: none; }
+  .btn:hover { transform: none; }
 }
 
 /* ==========================================================================
@@ -1936,139 +1835,62 @@ a.contact-channel:hover { border-color: rgba(47, 107, 255, 0.4); transform: tran
    18. CHATBOT — "GURU"
    ========================================================================== */
 
-/* --- Launcher --- */
-.gc-launcher {
-  position: relative;
-  width: 50px; height: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: var(--r-pill);
-  border: 1px solid transparent;
-  background-image: var(--g-signal);
-  color: #FFFFFF;
-  box-shadow: 0 10px 26px rgba(47, 107, 255, 0.30);
-  transition: transform var(--t-fast) var(--ease-out), box-shadow var(--t-med) var(--ease-out);
-}
-.gc-launcher:hover { transform: translateY(-3px); box-shadow: var(--shadow-cyan); }
-.gc-launcher svg { width: 22px; height: 22px; }
-.gc-launcher.is-hidden { display: none; }
-
-/* --- Teaser popup: appears after 3s, points at the launcher --- */
-.gc-teaser {
-  position: absolute;
-  right: calc(100% + 14px);
-  top: 50%;
-  transform: translateY(-50%) translateX(6px);
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: 0.625rem 0.875rem;
-  border-radius: var(--r-md);
-  background: #FFFFFF;
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
-  border: 1px solid var(--c-line-strong);
-  box-shadow: var(--shadow-card);
-  white-space: nowrap;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              visibility 0s linear var(--t-med);
-}
-
-.gc-teaser.is-visible {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-50%) translateX(0);
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              visibility 0s;
-  animation: gc-teaser-nudge 2.4s var(--ease-smooth) 400ms 2;
-}
-
-/* Arrow pointing right, at the launcher */
-.gc-teaser::after {
-  content: "";
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left-color: #FFFFFF;
-}
-
-.gc-teaser__title {
-  font-family: var(--f-display);
-  font-size: var(--fs-small);
-  font-weight: 600;
-  color: var(--c-white);
-  line-height: 1.3;
-}
-
-.gc-teaser__cta {
-  font-family: var(--f-mono);
-  font-size: var(--fs-label);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  background: var(--g-signal);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  line-height: 1.3;
-}
-
-@keyframes gc-teaser-nudge {
-  0%, 100% { transform: translateY(-50%) translateX(0); }
-  50%      { transform: translateY(-50%) translateX(-4px); }
-}
-
-/* Very narrow screens: keep the teaser on-screen */
-@media (max-width: 380px) {
-  .gc-teaser { right: calc(100% + 10px); padding: 0.5rem 0.6875rem; }
-}
-
-/* --- Window --- */
+/* Chat opens on demand from the shared Contact menu. */
 .gc-window {
   position: fixed;
-  z-index: var(--z-chatbot);
-  display: flex;
+  inset: auto 0 0;
+  display: none;
   flex-direction: column;
-  background: #FFFFFF;
+  width: 100%;
+  max-width: none;
+  height: min(39rem, 84dvh);
+  max-height: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background: #fff;
   border: 1px solid var(--c-line);
+  border-radius: 20px 20px 0 0;
   box-shadow: 0 24px 70px rgba(16, 33, 64, 0.18);
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(12px) scale(0.98);
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              visibility 0s linear var(--t-med);
-
-  /* Mobile: full screen, dvh handles the browser chrome correctly */
-  inset: 0;
-  height: 100dvh;
-  border-radius: 0;
+  color: var(--c-white);
 }
-
-.gc-window.is-open {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0) scale(1);
-  transition: opacity var(--t-med) var(--ease-out),
-              transform var(--t-med) var(--ease-out),
-              visibility 0s;
-}
-
-@media (min-width: 560px) {
+.gc-window[open] { display: flex; }
+.gc-window::backdrop { background: #10214030; }
+body:has(.gc-window:modal) { overflow: hidden; }
+@media (min-width: 768px) {
   .gc-window {
-    inset: auto var(--sp-4) calc(var(--sp-4) + 62px) auto;
-    width: 390px;
-    height: min(600px, calc(100dvh - 140px));
-    border-radius: var(--r-lg);
+    inset: 84px 14px 14px auto;
+    z-index: 145;
+    width: min(24rem, 42vw);
+    height: auto;
+    border-radius: 16px;
+  }
+  .gc-window::backdrop { background: #10214012; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .gc-window[open] { animation: chat-in 220ms ease-out both; }
+  @keyframes chat-in {
+    from { opacity: .8; transform: translateY(6px); }
+    to { opacity: 1; transform: none; }
   }
 }
+.gc-window .gc-close { width: 48px; height: 48px; }
+.gc-window .gc-send { width: 48px; height: 48px; }
+.gc-human {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .4rem;
+  min-height: 48px;
+  flex: none;
+  padding: .35rem .75rem max(.35rem, env(safe-area-inset-bottom));
+  border-top: 1px solid #c9e4d7;
+  background: #e8f7f0;
+  color: #065743;
+  font-size: .83rem;
+  font-weight: 700;
+}
+.gc-human:hover { text-decoration: underline; }
 
 /* --- Header --- */
 .gc-head {
@@ -2139,6 +1961,7 @@ a.contact-channel:hover { border-color: rgba(47, 107, 255, 0.4); transform: tran
 /* --- Log --- */
 .gc-log {
   flex: 1;
+  min-height: 0;
   overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
@@ -2270,35 +2093,18 @@ a.contact-channel:hover { border-color: rgba(47, 107, 255, 0.4); transform: tran
 /* ==========================================================================
    19. MOTION & REVEAL SYSTEM
    ========================================================================== */
-[data-reveal],
-[data-reveal-group] > * {
-  opacity: 0;
-  transform: translateY(22px);
-  transition: opacity var(--t-slow) var(--ease-out),
-              transform var(--t-slow) var(--ease-out);
-  transition-delay: var(--reveal-delay, 0ms);
-  will-change: opacity, transform;
+@media (prefers-reduced-motion: no-preference) {
+  [data-reveal].will-reveal,
+  [data-reveal-group].will-reveal > * {
+    transition: transform 400ms var(--site-ease, ease-out);
+    transition-delay: var(--reveal-delay, 0ms);
+  }
+  [data-reveal].will-reveal:not(.is-revealed),
+  [data-reveal-group].will-reveal:not(.is-revealed) > * {
+    transform: translateY(6px);
+  }
+  [data-reveal="fade"].will-reveal:not(.is-revealed) { transform: translateY(3px); }
 }
-
-[data-reveal="fade"]  { transform: none; }
-[data-reveal="scale"] { transform: scale(0.96); }
-
-/* Horizontal slide-ins are a desktop affordance. On narrow screens the
-   pre-animation offset would push past the viewport edge and create a
-   horizontal scrollbar, so below 900px these rise like everything else. */
-[data-reveal="left"],
-[data-reveal="right"] { transform: translateY(22px); }
-
-@media (min-width: 900px) {
-  [data-reveal="left"]  { transform: translateX(-26px); }
-  [data-reveal="right"] { transform: translateX(26px); }
-}
-
-.is-revealed,
-[data-reveal-group].is-revealed > * { opacity: 1; transform: none; }
-
-.reveal-done,
-[data-reveal-group].reveal-done > * { will-change: auto; }
 
 /* ==========================================================================
    20. REDUCED MOTION
@@ -2316,7 +2122,6 @@ a.contact-channel:hover { border-color: rgba(47, 107, 255, 0.4); transform: tran
   [data-reveal],
   [data-reveal-group] > * { opacity: 1; transform: none; }
 
-  .gc-teaser.is-visible { animation: none; }
 }
 
 /* ==========================================================================

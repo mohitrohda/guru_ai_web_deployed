@@ -16,12 +16,15 @@
     automation: { title: 'Give repetitive work a better path.', copy: 'Explore follow-ups, reporting and data movement that can be automated. An AI consultation can help identify a practical place to begin.', keys: ['automation', 'consulting', 'chatbots'], service: 'AI Business Automation', links: [['Business automation', 'services/ai-automation.html'], ['AI consulting', 'services/ai-consulting.html'], ['AI chatbots', 'services/chatbots-voice.html']] },
     software: { title: 'Build around how your team works.', copy: 'Explore custom software, internal tools and mobile apps. Start with your users, the tools you already have and the problem you want to solve.', keys: ['software', 'mobile', 'cloud'], service: 'Custom Software', links: [['Custom software', 'services/software-development.html'], ['Mobile applications', 'services/mobile-apps.html'], ['Cloud and DevOps', 'services/cloud-devops.html']] }
   };
-  let currentGoal = 'leads';
+  let currentGoal;
+  let goalAnimation;
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const goalLinks = [...document.querySelectorAll('[data-goal]')];
   const result = document.getElementById('hp-goal-results');
   const displayGoal = key => {
     const goal = goals[key];
-    if (!goal || !result) return;
+    if (!goal || !result || key === currentGoal) return;
+    const switching = Boolean(currentGoal);
     currentGoal = key;
     goalLinks.forEach(link => { const active = link.dataset.goal === key; if (active) link.setAttribute('aria-current', 'true'); else link.removeAttribute('aria-current'); });
     result.querySelector('h3').textContent = goal.title;
@@ -29,13 +32,25 @@
     const links = result.querySelector('.hp-goal-links');
     links.replaceChildren(...goal.links.map(([label, href]) => { const link = document.createElement('a'); link.href = href; link.textContent = label + ' ↗'; return link; }));
     document.querySelectorAll('[data-service]').forEach(card => card.classList.toggle('is-recommended', goal.keys.includes(card.dataset.service)));
+    if (switching && !reduceMotion.matches && result.animate) {
+      goalAnimation?.cancel();
+      goalAnimation = result.animate(
+        [{ opacity: .82, transform: 'translateY(4px)' }, { opacity: 1, transform: 'none' }],
+        { duration: 260, easing: 'ease-out' },
+      );
+    }
   };
   goalLinks.forEach(link => link.addEventListener('click', event => {
     if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || event.button !== 0) return;
     event.preventDefault(); displayGoal(link.dataset.goal);
   }));
-  document.querySelector('[data-goal-discuss]')?.addEventListener('click', () => chooseService(goals[currentGoal].service));
-  displayGoal(currentGoal);
+  document.querySelector('[data-goal-discuss]')?.addEventListener('click', () => {
+    chooseService(goals[currentGoal].service);
+    const goal = document.getElementById('cf-goal');
+    goal.value = currentGoal;
+    goal.form.dispatchEvent(new Event('brief:goal'));
+  });
+  displayGoal('leads');
 
   const comparison = document.getElementById('hp-comparison-range');
   const stage = document.querySelector('.hp-compare-stage');
@@ -44,16 +59,31 @@
   const steps = [...document.querySelectorAll('.hp-process-list .process-step')];
   const process = document.getElementById('process');
   let framePending = false;
+  let processNear = !('IntersectionObserver' in window);
   const updateProcess = () => {
     framePending = false;
     let reached = 0;
-    steps.forEach((step, index) => { const active = step.getBoundingClientRect().top < window.innerHeight * .85; step.classList.toggle('is-in-view', active); if (active) reached = index + 1; });
-    process?.style.setProperty('--process-progress', (steps.length ? reached / steps.length * 100 : 0) + '%');
+    const activeSteps = steps.map(step => step.getBoundingClientRect().top < window.innerHeight * .85);
+    activeSteps.forEach((active, index) => {
+      steps[index].classList.toggle('is-in-view', active);
+      if (active) reached = index + 1;
+    });
+    process?.style.setProperty('--process-progress', steps.length ? reached / steps.length : 0);
   };
-  const queueProcess = () => { if (framePending) return; framePending = true; window.requestAnimationFrame(updateProcess); };
+  const queueProcess = () => {
+    if (!processNear || framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updateProcess);
+  };
+  if (process && 'IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      processNear = entry.isIntersecting;
+      queueProcess();
+    }, { rootMargin: '120px 0px' }).observe(process);
+  }
   window.addEventListener('scroll', queueProcess, { passive: true });
   window.addEventListener('resize', queueProcess);
-  updateProcess();
+  queueProcess();
 })();
 
 (() => {
@@ -252,20 +282,12 @@
   const workflow = document.getElementById('workflow');
   if (!workflow) return;
 
-  const steps = [...workflow.querySelectorAll('[data-nx-step]')];
-  const panels = workflow.querySelectorAll('[data-flow-visible]');
-  const caption = workflow.querySelector('#nx-flow-caption');
-  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-  const captions = [
-    'A message starts the journey.',
-    'AI understands the request.',
-    'Useful details are extracted.',
-    'A CRM lead keeps the context.',
-    'A time is chosen.',
-    'Confirmation reaches everyone.',
-  ];
-
   const demo = workflow.querySelector('.nx-demo');
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const controls = demo.querySelector('.nx-flow-steps');
+  const steps = [...controls.querySelectorAll('[data-nx-step]')];
+  const panels = [...demo.querySelectorAll('[data-flow-visible]')];
+  const caption = demo.querySelector('#nx-flow-caption');
   const canObserve = 'IntersectionObserver' in window;
   let active = 0;
   let visible = !canObserve;
@@ -279,24 +301,39 @@
       step.classList.toggle('is-active', selected);
       step.setAttribute('aria-pressed', String(selected));
     });
-    panels.forEach(panel => panel.classList.toggle('is-shown', Number(panel.dataset.flowVisible) === index));
-    caption.textContent = `0${index + 1} / ${captions[index]}`;
+    panels.forEach((panel, position) => {
+      panel.classList.toggle('is-shown', position === index);
+      panel.setAttribute('aria-hidden', String(position !== index));
+    });
+    demo.style.setProperty('--flow-progress', (index + 1) / steps.length);
+    caption.textContent = '0' + (index + 1) + ' / 0' + steps.length + ' · ' + steps[index].querySelector('strong').textContent;
   };
 
-  const schedule = () => {
+  const schedule = (delay = 2200) => {
     clearTimeout(timer);
     if (!visible || document.hidden || reduced.matches || hovered ||
         demo.querySelector(':focus-visible')) return;
     timer = setTimeout(() => {
       showStep((active + 1) % steps.length);
       schedule();
-    }, 2200);
+    }, delay);
   };
 
-  steps.forEach((button, index) => button.addEventListener('click', () => {
-    showStep(index);
-    schedule();
-  }));
+  steps.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      showStep(index);
+      schedule(3600);
+    });
+    button.addEventListener('keydown', event => {
+      const destinations = { ArrowLeft: index - 1, ArrowUp: index - 1, ArrowRight: index + 1, ArrowDown: index + 1, Home: 0, End: steps.length - 1 };
+      if (!Object.hasOwn(destinations, event.key)) return;
+      event.preventDefault();
+      const next = (destinations[event.key] + steps.length) % steps.length;
+      showStep(next);
+      steps[next].focus();
+      schedule();
+    });
+  });
   demo.addEventListener('pointerenter', event => {
     if (event.pointerType !== 'mouse') return;
     hovered = true;
@@ -306,20 +343,53 @@
     hovered = false;
     schedule();
   });
-  demo.addEventListener('focusin', schedule);
+  demo.addEventListener('focusin', () => schedule());
   demo.addEventListener('focusout', () => queueMicrotask(schedule));
-  reduced.addEventListener('change', schedule);
-  document.addEventListener('visibilitychange', schedule);
+  reduced.addEventListener('change', () => schedule());
+  document.addEventListener('visibilitychange', () => schedule());
 
   if (canObserve) {
     new IntersectionObserver(([entry]) => {
       visible = entry.isIntersecting;
       schedule();
-    }).observe(demo);
+    }, { threshold: .28 }).observe(demo);
   }
 
+  controls.hidden = false;
   showStep(0);
   schedule();
 })();
 
-(()=>{if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;const targets=[...document.querySelectorAll('#about .intro__copy,#about .hp-fix-stack a,#services .section__head,#clients .section__head,#clients .clients-strip li')];targets.forEach((el,i)=>{el.style.setProperty('--nx-delay',(i%4)*65+'ms');if(el.getBoundingClientRect().top>window.innerHeight*.85)el.classList.add('nx-entry-pending')});const observer=new IntersectionObserver(entries=>{for(const entry of entries){if(!entry.isIntersecting)continue;entry.target.classList.add('nx-entry-in');entry.target.classList.remove('nx-entry-pending');observer.unobserve(entry.target)}},{threshold:.12,rootMargin:'0px 0px -5% 0px'});targets.forEach(el=>observer.observe(el))})();
+(() => {
+  const marquee = document.querySelector('[data-client-marquee]');
+  if (!marquee) return;
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const track = marquee.querySelector('.client-marquee__track');
+  const copy = track.firstElementChild.cloneNode(true);
+  copy.setAttribute('aria-hidden', 'true');
+  copy.inert = true;
+  track.append(copy);
+  marquee.classList.add('has-loop');
+
+  let visible = !('IntersectionObserver' in window);
+  let hovered = false;
+  const update = () => marquee.classList.toggle(
+    'is-playing', visible && !document.hidden && !hovered && !reduced.matches,
+  );
+
+  marquee.addEventListener('pointerenter', event => {
+    if (event.pointerType !== 'mouse') return;
+    hovered = true;
+    update();
+  });
+  marquee.addEventListener('pointerleave', () => { hovered = false; update(); });
+  if ('IntersectionObserver' in window) {
+    new IntersectionObserver(([entry]) => {
+      visible = entry.isIntersecting;
+      update();
+    }).observe(marquee);
+  }
+  reduced.addEventListener('change', update);
+  document.addEventListener('visibilitychange', update);
+  update();
+})();

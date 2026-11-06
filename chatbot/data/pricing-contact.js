@@ -7,18 +7,18 @@ window.GURU.chatbotData.register([
     patterns: [/how much/i, /(kitna|kiti|kya) (hoga|lagega|kharch|paisa|cost|price)/i],
     responses: {
       en: [
-        "Every project is different, so we don't have fixed price lists — we prepare a custom quote based on exactly what you need. Share your requirements on WhatsApp at +91 80876 95569, or email sales@guruaitechnologies.com — you'll usually have a clear quote within 24 hours.",
+        "Tell us what you need the website, software, or automation to do. We’ll discuss what to build, the timeline, and the cost before you commit. WhatsApp +91 80876 95569 or email contact@guruaitechnologies.com.",
         "Pricing is always custom — it depends on features, scale, and timeline. The fastest way to get a real number: message us on WhatsApp with a short description of what you want. No obligation.",
-        "We quote per project, not from a rate card — so you only pay for what you actually need. Tell us your idea on WhatsApp, through the contact form, or at sales@guruaitechnologies.com and we'll send a detailed custom quote.",
-        "Honest answer: it depends on scope. A quick WhatsApp chat about your requirements gets you an exact custom quote — usually the same day.",
+        "We quote per project, not from a rate card — so you only pay for what you actually need. Tell us your idea on WhatsApp, through the contact form, or at contact@guruaitechnologies.com and we'll send a detailed custom quote.",
+        "Share your goal and any tools we should connect to. We usually reply within 24 hours, Monday to Saturday, and will ask for any details we need before quoting.",
       ],
       hi: [
-        "Har project alag hota hai, isliye fixed price nahi hai — custom quote milta hai. WhatsApp par requirement bhejiye (+91 80876 95569), 24 ghante mein clear quote mil jayega.",
+        "Har project alag hota hai, isliye fixed price nahi hai — custom quote milta hai. WhatsApp par requirement bhejiye (+91 80876 95569), hum usually Monday se Saturday, 24 ghante mein reply karte hain.",
         "Pricing project ke hisaab se hoti hai. Sabse fast tareeka: WhatsApp par apna idea bhejiye, hum custom quote bhej denge. Koi charge nahi poochne ka!",
         "Fixed rate card nahi hai — jitna kaam, utna hi daam. Requirement batayiye, sahi quote milega.",
       ],
       mr: [
-        "Pratyek project vegla asto, mhanun fixed price nahi — custom quote milte. WhatsApp var requirement pathva (+91 80876 95569), 24 tasat clear quote milel.",
+        "Pratyek project vegla asto, mhanun fixed price nahi — custom quote milte. WhatsApp var requirement pathva (+91 80876 95569), aamhi sahasa Somvar te Shanivar 24 tasat uttar deto.",
         "Pricing project pramane aste. Sarvat fast marg: WhatsApp var tumchi idea pathva, amhi custom quote pathvu. Vicharayla kahi charge nahi!",
       ],
     },
@@ -29,7 +29,7 @@ window.GURU.chatbotData.register([
     patterns: [/(contact|phone|whatsapp) (number|details|karo|kara)/i, /talk to (a )?(human|person|team)/i],
     responses: {
       en: [
-        "Here's how to reach the team:\nWhatsApp / Call: +91 80876 95569\nEmail: contact@guruaitechnologies.com\nHours: Monday–Saturday, 10 AM – 7 PM IST.\nWhatsApp usually gets the fastest reply.",
+        "Here's how to reach the team:\nWhatsApp / Call: +91 80876 95569\nEmail: contact@guruaitechnologies.com\nHours: Mon–Sat · 10:00 AM–7:00 PM IST.\nWhatsApp usually gets the fastest reply.",
         "You can WhatsApp or call +91 80876 95569, or email contact@guruaitechnologies.com. We reply within 24 hours, Monday to Saturday.",
         "The fastest route is WhatsApp: +91 80876 95569. Prefer email? contact@guruaitechnologies.com works too. A real human will reply, promise.",
       ],
@@ -49,8 +49,8 @@ window.GURU.chatbotData.register([
     patterns: [/(kab|kadhi|when).*(open|khul|chalu)/i],
     responses: {
       en: [
-        "We work Monday to Saturday, 10:00 AM to 7:00 PM IST. Sundays are for recharging — but you can message on WhatsApp anytime and we'll reply the next working day.",
-        "Business hours: Mon–Sat, 10 AM – 7 PM IST. Messages sent outside hours are answered first thing the next working day.",
+        "Our hours are Mon–Sat · 10:00 AM–7:00 PM IST. Sundays are for recharging — but you can message on WhatsApp anytime and we'll reply the next working day.",
+        "Business hours: Mon–Sat · 10:00 AM–7:00 PM IST. Messages sent outside hours are answered first thing the next working day.",
       ],
       hi: [
         "Hum Somvar se Shanivar, subah 10 se shaam 7 baje tak kaam karte hain. Sunday chhutti — par WhatsApp message kabhi bhi bhej sakte hain.",

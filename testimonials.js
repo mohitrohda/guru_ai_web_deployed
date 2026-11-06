@@ -28,6 +28,7 @@ window.GURU.testimonials = (() => {
 
     let loopWidth = 0;
     let visible = !("IntersectionObserver" in window);
+    let prepared = visible;
     let hovered = false;
     let interacting = false;
     let resumeTimer;
@@ -47,7 +48,7 @@ window.GURU.testimonials = (() => {
 
     const updatePlayback = () => {
       const moving = !repeat.hidden && visible && !document.hidden &&
-        !hovered && !interacting && !viewport.matches(":focus-within");
+        !hovered && !interacting && !root.querySelector(":focus-visible");
 
       if (moving && !frame) frame = requestAnimationFrame(tick);
       if (!moving && frame) {
@@ -58,9 +59,10 @@ window.GURU.testimonials = (() => {
     };
 
     const measure = () => {
+      if (!prepared) return;
       loopWidth = originals.offsetWidth;
       const looping = !reduced.matches && loopWidth > viewport.clientWidth;
-      if (!looping && !repeat.hidden) viewport.scrollLeft %= loopWidth;
+      if (!looping && !repeat.hidden) viewport.scrollLeft = loopWidth ? viewport.scrollLeft % loopWidth : 0;
       repeat.hidden = !looping;
       viewport.classList.toggle("is-looping", looping);
       updatePlayback();
@@ -78,33 +80,39 @@ window.GURU.testimonials = (() => {
 
     const move = direction => {
       const step = cards[1].offsetLeft - cards[0].offsetLeft;
+      if (!repeat.hidden && viewport.scrollLeft >= loopWidth) viewport.scrollLeft -= loopWidth;
       const position = viewport.scrollLeft;
       const end = viewport.scrollWidth - viewport.clientWidth;
-      let left = (Math.round(position / step) + direction) * step;
+      let left = direction > 0
+        ? (Math.floor((position + 1) / step) + 1) * step
+        : (Math.ceil((position - 1) / step) - 1) * step;
 
-      if (direction < 0 && position <= 1) left = repeat.hidden ? end : loopWidth - step;
+      if (direction < 0 && position <= 1) {
+        if (!repeat.hidden) viewport.scrollLeft = loopWidth;
+        left = repeat.hidden ? end : loopWidth - step;
+      }
       if (direction > 0 && position >= end - 1) left = 0;
 
       waitBeforePlaying();
       viewport.scrollTo({
         left,
-        behavior: reduced.matches || Math.abs(left - position) > step * 2 ? "instant" : "smooth",
+        behavior: reduced.matches || Math.abs(left - viewport.scrollLeft) > step * 2 ? "instant" : "smooth",
       });
     };
 
     controls.querySelector("[data-feedback-prev]").addEventListener("click", () => move(-1));
     controls.querySelector("[data-feedback-next]").addEventListener("click", () => move(1));
-    viewport.addEventListener("pointerenter", event => {
+    root.addEventListener("pointerenter", event => {
       if (event.pointerType !== "mouse") return;
       hovered = true;
       updatePlayback();
     });
-    viewport.addEventListener("pointerleave", () => {
+    root.addEventListener("pointerleave", () => {
       hovered = false;
       updatePlayback();
     });
-    viewport.addEventListener("focusin", updatePlayback);
-    viewport.addEventListener("focusout", () => queueMicrotask(updatePlayback));
+    root.addEventListener("focusin", updatePlayback);
+    root.addEventListener("focusout", () => queueMicrotask(updatePlayback));
     viewport.addEventListener("pointerdown", waitBeforePlaying);
     viewport.addEventListener("wheel", waitBeforePlaying, { passive: true });
     viewport.addEventListener("scroll", () => {
@@ -119,7 +127,12 @@ window.GURU.testimonials = (() => {
     if ("IntersectionObserver" in window) {
       new IntersectionObserver(([entry]) => {
         visible = entry.isIntersecting;
-        updatePlayback();
+        if (visible && !prepared) {
+          prepared = true;
+          measure();
+        } else {
+          updatePlayback();
+        }
       }).observe(viewport);
     }
 

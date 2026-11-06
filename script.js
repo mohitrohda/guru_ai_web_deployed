@@ -6,11 +6,9 @@
    00. Non-blocking Google Fonts
    01. Utils
    03. Reveal system · scroll progress · to-top
-   04. Contact form
-   05. Boot (loader + init)
+   05. Boot
 
-   The GURU chatbot lives in /chatbot/ and registers itself on
-   window.GURU.chatbot — it is initialised at the end of this file.
+   The GURU chatbot loads on demand from /chatbot/loader.js.
    ========================================================================== */
 
 /* ==========================================================================
@@ -96,7 +94,7 @@ window.GURU.animations = (() => {
 
   const { $, $$, throttle, prefersReducedMotion, clamp } = window.GURU.utils;
 
-  const STAGGER_MS = 80;
+  const STAGGER_MS = 35;
   const TOP_TRIGGER = 600;
 
   const initReveals = () => {
@@ -104,17 +102,15 @@ window.GURU.animations = (() => {
     const groups = $$("[data-reveal-group]");
     if (!singles.length && !groups.length) return;
 
-    // No observer support or reduced motion → show everything immediately
-    if (!("IntersectionObserver" in window) || prefersReducedMotion()) {
-      [...singles, ...groups].forEach((el) =>
-        el.classList.add("is-revealed", "reveal-done")
-      );
-      return;
-    }
+    // Leave the first screen and the no-JavaScript layout fully visible.
+    if (!("IntersectionObserver" in window) || prefersReducedMotion()) return;
+    const belowFold = [...singles, ...groups].filter(el =>
+      el.getBoundingClientRect().top > window.innerHeight
+    );
 
     groups.forEach((group) => {
       Array.from(group.children).forEach((child, i) => {
-        child.style.setProperty("--reveal-delay", `${i * STAGGER_MS}ms`);
+        child.style.setProperty("--reveal-delay", `${Math.min(i, 3) * STAGGER_MS}ms`);
       });
     });
 
@@ -126,15 +122,16 @@ window.GURU.animations = (() => {
           el.classList.add("is-revealed");
           observer.unobserve(el);
 
-          const groupSize = el.hasAttribute("data-reveal-group") ? el.children.length : 0;
-          const settle = 640 + groupSize * STAGGER_MS + 100;
-          setTimeout(() => el.classList.add("reveal-done"), settle);
+          setTimeout(() => el.classList.remove("will-reveal"), 535);
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      { rootMargin: "0px 0px 24px 0px" }
     );
 
-    [...singles, ...groups].forEach((el) => observer.observe(el));
+    belowFold.forEach(el => {
+      el.classList.add("will-reveal");
+      observer.observe(el);
+    });
   };
 
   const initProgress = () => {
@@ -174,154 +171,6 @@ window.GURU.animations = (() => {
     initReveals();
     initProgress();
     initToTop();
-  };
-
-  return { init };
-})();
-
-/* ==========================================================================
-   04. CONTACT FORM — EmailJS
-   The "Send Message" form submits through EmailJS (client-side, no backend).
-   Validation, loading state, success/error messaging, and the existing UI
-   are all preserved. WhatsApp buttons elsewhere on the site are untouched.
-   ========================================================================== */
-window.GURU.form = (() => {
-  "use strict";
-
-  const { $, $$ } = window.GURU.utils;
-
-  const EMAILJS_PUBLIC_KEY  = "7atusLHN2MeUmkcE1";
-  const EMAILJS_SERVICE_ID  = "service_c1hra9n";
-  const EMAILJS_TEMPLATE_ID = "template_mracq88";
-
-  const validators = {
-    name:    (v) => v.trim().length >= 2,
-    phone:   (v) => /^[+\d][\d\s-]{7,15}$/.test(v.trim()),
-    email:   (v) => /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v.trim()),
-    message: (v) => v.trim().length >= 10,
-  };
-
-  let form, status, submitBtn, submitLabel;
-
-  const setFieldError = (input, invalid) => {
-    const field = input.closest(".form__field");
-    if (field) field.classList.toggle("has-error", invalid);
-    input.setAttribute("aria-invalid", String(invalid));
-  };
-
-  const validate = () => {
-    let firstInvalid = null;
-    Object.keys(validators).forEach((name) => {
-      const input = form.elements[name];
-      if (!input) return;
-      const invalid = !validators[name](input.value);
-      setFieldError(input, invalid);
-      if (invalid && !firstInvalid) firstInvalid = input;
-    });
-    if (firstInvalid) firstInvalid.focus();
-    return !firstInvalid;
-  };
-
-  const say = (msg, kind) => {
-    status.textContent = msg;
-    status.classList.remove("is-success", "is-error");
-    if (kind) status.classList.add(kind);
-  };
-
-  const collect = () => ({
-    name: form.elements.name.value.trim(),
-    phone: form.elements.phone.value.trim(),
-    email: form.elements.email.value.trim(),
-    service: form.elements.service ? form.elements.service.value : "",
-    message: form.elements.message.value.trim(),
-  });
-
-  /** Toggle the submit button between idle and loading states. */
-  const setLoading = (loading) => {
-    submitBtn.disabled = loading;
-    submitBtn.setAttribute("aria-busy", String(loading));
-    submitBtn.textContent = loading ? "Sending…" : submitLabel;
-  };
-
-  const clearErrors = () =>
-    $$(".form__field", form).forEach((f) => f.classList.remove("has-error"));
-
-  /**
-   * Template params sent to EmailJS. Common EmailJS template variables are
-   * covered so the message renders whichever field names the template uses.
-   */
-  const buildParams = (data) => ({
-    from_name: data.name,
-    name: data.name,
-    reply_to: data.email,
-    email: data.email,
-    from_email: data.email,
-    phone: data.phone,
-    service: data.service,
-    message: data.message,
-    to_name: "GURU AI TECHNOLOGIES",
-  });
-
-  const sendViaEmailJS = async (data) => {
-    // Guard: if the SDK failed to load (e.g. offline), tell the user how to
-    // reach us rather than throwing silently.
-    if (!window.emailjs) {
-      say("Our messaging service didn't load. Please WhatsApp us on +91 80876 95569 and we'll respond right away.", "is-error");
-      return;
-    }
-
-    setLoading(true);
-    say("Sending your message…");
-
-    try {
-      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, buildParams(data));
-      say("Thank you — your message has been sent. We'll get back to you within 24 hours.", "is-success");
-      form.reset();
-      clearErrors();
-    } catch (err) {
-      say("Something went wrong while sending. Please try again, or WhatsApp us on +91 80876 95569.", "is-error");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const onSubmit = (e) => {
-    e.preventDefault();
-
-    // Honeypot: a filled hidden field means a bot. Fail silently.
-    if (form.elements.website && form.elements.website.value) return;
-
-    if (!validate()) {
-      say("Please check the highlighted fields.", "is-error");
-      return;
-    }
-
-    sendViaEmailJS(collect());
-  };
-
-  const init = () => {
-    form = $("#contact-form");
-    if (!form) return;
-    status = $(".form__status", form);
-    submitBtn = $('button[type="submit"]', form);
-    submitLabel = submitBtn ? submitBtn.textContent : "Send Message";
-
-    // Initialise EmailJS here (inside a 'self' script, so it satisfies the
-    // strict Content-Security-Policy without needing an inline-script hash).
-    if (window.emailjs) {
-      try { emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY }); } catch (_) {}
-    }
-
-    form.addEventListener("submit", onSubmit);
-
-    // Clear a field's error as soon as it becomes valid
-    Object.keys(validators).forEach((name) => {
-      const input = form.elements[name];
-      if (!input) return;
-      input.addEventListener("input", () => {
-        if (validators[name](input.value)) setFieldError(input, false);
-      });
-    });
   };
 
   return { init };
@@ -533,50 +382,22 @@ window.GURU.lightbox = (() => {
 
   const { $ } = window.GURU.utils;
 
-  /* --- Loader: dismiss on load, with a hard timeout so the site can
-         never be trapped behind it if an asset stalls. --- */
-  const LOADER_MAX_MS = 2500;
-  const LOADER_MIN_MS = 450;
-
-  const dismissLoader = (() => {
-    let done = false;
-    const start = performance.now();
-    return () => {
-      if (done) return;
-      done = true;
-      const loader = $(".loader");
-      if (!loader) return;
-      const wait = Math.max(0, LOADER_MIN_MS - (performance.now() - start));
-      setTimeout(() => {
-        loader.classList.add("is-done");
-        loader.addEventListener("transitionend", () => loader.remove(), { once: true });
-        setTimeout(() => loader.isConnected && loader.remove(), 800);
-      }, wait);
-    };
-  })();
-
-  window.addEventListener("load", dismissLoader);
-  setTimeout(dismissLoader, LOADER_MAX_MS);
-
   const boot = () => {
     window.GURU.animations.init();
-    window.GURU.form.init();
     window.GURU.servicesShowcase.init();
     window.GURU.expand.init();
     window.GURU.lightbox.init();
     if (window.GURU.testimonials) window.GURU.testimonials.init();
-    if (window.GURU.chatbot) window.GURU.chatbot.init();
 
     const year = $("[data-year]");
     if (year) year.textContent = new Date().getFullYear();
   };
 
-  /* Boot timing note: this file loads FIRST (the chatbot modules read
-     GURU.utils as they execute), so boot() must wait for the later defer
-     scripts. During deferred execution document.readyState is already
+  /* Boot waits for later deferred modules such as testimonials.
+     During deferred execution document.readyState is already
      "interactive" — DOMContentLoaded has NOT fired yet. Only "complete"
      means we missed it. Testing for "loading" here would run boot() too
-     early and silently skip the chatbot. */
+     early and silently skip those modules. */
   if (document.readyState === "complete") {
     boot();
   } else {
