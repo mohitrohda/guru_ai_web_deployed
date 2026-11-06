@@ -182,7 +182,6 @@
  .hp-footer-invite .btn { align-self:center; }
 }
 @media (max-width:639px) {
- .intent-home .float-stack { flex-direction:row; gap:.5rem; bottom:calc(12px + env(safe-area-inset-bottom)); right:12px; }
  .intent-home .footer { padding-bottom:90px; }
  .hp-flow { border-radius:20px; }
  .hp-flow-top { font-size:.5rem; }

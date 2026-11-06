@@ -1,7 +1,7 @@
 # GURU AI TECHNOLOGIES — Production Website
 
 Premium, handcrafted static site. No build step, no dependencies, no framework.
-Optimized for Cloudflare Pages.
+Static pages with a Vercel function for the project enquiry form.
 
 ## Latest UI/UX Update
 
@@ -102,63 +102,58 @@ assets/showcase           Product preview visuals: 12 images x (desktop + mobile
 sitemap.xml  robots.txt  _headers  _redirects  site.webmanifest
 ```
 
-## Deploy on Cloudflare Pages
-1. Push this folder to a GitHub repo (repo root = this folder).
-2. Cloudflare Dashboard → Workers & Pages → Create → Pages → connect the repo.
-3. Build settings: **Framework preset: None · Build command: (leave empty) · Output directory: /**
-4. Deploy, then add the custom domain `guruaitechnologies.com`.
-   `_redirects` already forwards www → apex.
+## Deployment and canonical domain
 
-## Commit & push (this repo)
-This project is already connected to:
-`https://github.com/Onkarkamthe/GURUAITECH.git` (branch `main`).
+The canonical site is `https://guruaitechnologies.com`. The page canonicals,
+social cards, structured data, sitemap, and robots file point there.
 
-```bash
-cd guru-ai                     # repo root — the folder containing index.html
+1. Connect this repository in the Vercel project. Use the Other framework preset with the repository root and the default build and output settings. Confirm the project uses Node.js 22 or 24.
+2. Configure the server environment variables below. Create a preview, test the project form from that same origin, and verify delivery in the intended inbox before releasing it.
+3. Add `guruaitechnologies.com` in Vercel Domains. Apply the DNS records Vercel shows for this project and wait for verification and HTTPS. Check the homepage, a deep service page, a buying guide, the contact endpoint, and `/sitemap.xml` on the new host. [Vercel domain setup](https://vercel.com/docs/domains/working-with-domains/add-a-domain)
+4. Once the custom domain serves this release, set a 301 from the attached `guruaiwebdeployed.vercel.app` alias and `www.guruaitechnologies.com` to the apex. Confirm a deep path with a query string redirects to its matching destination. [Vercel domain redirects](https://vercel.com/docs/domains/working-with-domains/deploying-and-redirecting)
+5. Verify the custom domain in Search Console, submit the live sitemap, and align the Google Business Profile website, public phone, and hours. Run PageSpeed Insights on the live homepage and a core service page. [Google sitemap submission](https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap)
 
-git status                     # review what changed before committing
-git add -A                     # stage everything, including new asset folders
-git commit -m "Update images, SEO, expand/collapse, and lightbox"
-git push origin main
-```
+The security policy is configured in `vercel.json` and `_headers`. Keep their
+Content-Security-Policy values in sync and put executable JavaScript in
+external files. The sitemap contains the canonical URL for each indexable
+HTML page. Update it when adding or removing a page.
 
-Cloudflare Pages redeploys automatically on every push to `main` (if you've
-connected the repo via the Cloudflare dashboard as in step 2 above). No
-manual upload step is needed after the first connection.
+## Local preview
 
-**Important:** `assets/brand/` and `assets/showcase/` must be committed —
-they are real image folders, not generated at build time. If `git status`
-ever shows them as "Untracked," the site's logo and product visuals will
-be broken on anyone who clones/deploys from that commit, even though they
-render correctly locally. Always run `git add -A` (not `git add <file>`
-one-by-one) before committing to avoid missing a new folder.
+Run `python3 -m http.server` from the repository root and open
+[localhost:8000](http://localhost:8000/).
 
-`_headers` ships a strict Content-Security-Policy. It's already configured
-for everything this site uses (including the 404 page's inline script, which
-is allowed via a SHA-256 hash). **If you edit the inline script inside
-404.html, recompute its hash** and update the `script-src` value, or that
-script will be blocked in production.
+## Public contact details
 
-## Local preview — works everywhere, no setup
-All paths are relative, so the site works in every scenario:
-- **Double-click** `index.html`
-- **VS Code Live Server** from any folder level
-- **python3 -m http.server** from any folder level
+- Phone and WhatsApp: **+91 80876 95569**
+- General, quote and legal enquiries: **contact@guruaitechnologies.com**
+- Hours: **Mon–Sat · 10:00 AM–7:00 PM IST**
 
-## Contact details (used site-wide)
-- Phone / WhatsApp: **+91 80876 95569**
-- Role-based email: `contact@` (general), `sales@` (quotes),
-  `support@` (post-launch), `careers@` (hiring), `info@` (legal)
+## Project brief form
 
-## Contact form — activate a provider (2-minute setup)
-The form ships in **WhatsApp fallback mode**: submissions open WhatsApp with
-the enquiry pre-filled, so nothing is ever lost. To enable direct email
-delivery, edit `script.js` → the `CONFIG` object inside the form module:
-- **Web3Forms (free):** endpoint `https://api.web3forms.com/submit` + access key
-- **Formspree:** endpoint `https://formspree.io/f/YOUR_ID`
-- **Cloudflare Pages Function:** endpoint `/api/contact`
+`contact-brief.mjs` posts to the same-origin `/api/contact` Vercel function.
+Configure `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PUBLIC_KEY`,
+and `EMAILJS_PRIVATE_KEY` in the Vercel server environment for Preview and
+Production. Reuse the existing project service and template, confirm
+private-key API access in EmailJS, and keep the recipient set in the
+template. Render enquiry fields as escaped text.
+[EmailJS REST API](https://www.emailjs.com/docs/rest-api/send/)
 
-No markup changes needed. `_headers` CSP already allows Web3Forms and Formspree.
+Set both `UPSTASH_REDIS_REST_URL` and `UPSTASH_REDIS_REST_TOKEN` for shared
+rate limiting and duplicate protection across Vercel instances. Without
+these variables, the controls apply within each process. Store credentials
+in the host environment. The browser gets an acknowledgement only after
+the provider accepts the brief. A static preview supports direct WhatsApp
+and email links. Mock provider responses for automated checks.
+
+## Approved starting prices and proof
+
+`project-evidence.mjs` can display approved starting prices for website,
+software and automation projects. The current site offers custom quotes.
+Only add an approved amount in INR after confirming what the quote covers.
+The same file accepts business metrics with an approved integer value, a
+label, and a public source description. Review chatbot copy when prices
+change and date guides when they are first published.
 
 ## Chatbot — upgrading to a live AI later
 `chatbot/provider.js` has an `ApiProvider` template. Point it at a Cloudflare
@@ -198,10 +193,6 @@ page; Service + FAQPage on all 10 service pages. Complete Open Graph and
 Twitter Card tags on all 14 pages, unique canonicals, sitemap with lastmod,
 and "Related Services" cross-linking between service pages.
 
-> **CSP note:** `_headers` allows `https://cdn.jsdelivr.net` in `script-src`
-> and `https://api.emailjs.com` in `connect-src` — both are required for the
-> EmailJS contact form. Removing them will silently break form submissions in
-> production.
 21 aug 2026 
 change guru ai technologies logo 
 19/sep/2026

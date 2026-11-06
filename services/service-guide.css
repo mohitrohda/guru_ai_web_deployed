@@ -81,6 +81,9 @@
   margin: 0;
 }
 
+.service-guide__links { display: flex; flex-wrap: wrap; align-items: center; gap: .25rem 1rem; margin-top: .9rem; color: #344c70; font-size: .875rem; }
+.service-guide__links a { display: inline-flex; align-items: center; gap: .3rem; min-height: 44px; color: #184ab5; font-weight: 650; text-decoration: underline; text-underline-offset: 3px; }
+
 @media (max-width: 720px) {
   .service-guide .service-guide__features,
   .service-guide .service-guide__first-step {

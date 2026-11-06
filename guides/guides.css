@@ -1,0 +1,38 @@
+.guide-page { --guide-ink: #122b50; --guide-body: #344c70; --guide-line: #d7e2f2; }
+.guide-main { padding: 6.25rem 0 clamp(3rem, 7vw, 5.5rem); }
+.guide-crumb { display: flex; flex-wrap: wrap; gap: .35rem .6rem; margin-bottom: 1.4rem; color: #435b7a; font-size: .85rem; }
+.guide-main a:not([class]),
+.guide-footer a:not([class]) { color: #184ab5; text-decoration: underline; text-underline-offset: 3px; }
+.guide-hero {
+  padding: clamp(1.4rem, 5vw, 4rem);
+  border: 1px solid var(--guide-line);
+  border-radius: 20px;
+  background: radial-gradient(ellipse at top right, #d9e7fd, transparent 60%), #f1f6ff;
+}
+.guide-kicker { margin: 0 0 .65rem; color: #2555a3; font-weight: 750; font-size: .79rem; }
+.guide-hero h1 { max-width: 21ch; margin: 0; color: var(--guide-ink); font-size: clamp(2rem, 5.4vw, 3.9rem); line-height: 1.08; letter-spacing: -.04em; }
+.guide-hero .guide-intro { margin: 1rem 0 0; max-width: 60ch; color: var(--guide-body); font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.6; }
+.guide-byline { margin: 1.25rem 0 0; color: #435b7a; font-size: .83rem; }
+.guide-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 1.5rem; }
+.guide-card { padding: clamp(1rem, 2.7vw, 1.6rem); border: 1px solid var(--guide-line); border-radius: 14px; background: #fff; }
+.guide-card h2 { margin: 0 0 .65rem; font-size: 1.3rem; line-height: 1.23; color: var(--guide-ink); }
+.guide-card > p:not(.guide-kicker) { color: var(--guide-body); }
+.guide-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(14rem, 18rem); align-items: start; gap: clamp(1.2rem, 5vw, 4rem); margin-top: 2rem; }
+.guide-prose { max-width: 66ch; min-width: 0; color: var(--guide-body); line-height: 1.75; }
+.guide-illustration { margin: 0 0 1.5rem; }
+.guide-illustration img { display: block; width: 100%; height: auto; border-radius: 12px; }
+.guide-illustration figcaption { margin-top: .4rem; color: #435b7a; font-size: .83rem; }
+.guide-prose h2, .guide-checklist h2 { margin: 1.6rem 0 .6rem; color: var(--guide-ink); font-size: 1.42rem; line-height: 1.25; }
+.guide-prose section:first-child h2, .guide-checklist h2 { margin-top: 0; }
+.guide-checklist { padding: 1.15rem; border: 1px solid var(--guide-line); border-radius: 14px; background: #f4f8ff; color: var(--guide-body); }
+.guide-checklist ul { margin: 0; padding-inline-start: 1.15rem; list-style: disc; }
+.guide-checklist li + li { margin-top: .42rem; }
+.guide-related { margin-top: 2.25rem; padding: 1.2rem; border: 1px solid var(--guide-line); border-radius: 14px; }
+.guide-related h2 { margin: 0 0 .55rem; font-size: 1.3rem; }
+.guide-related ul { display: flex; flex-wrap: wrap; gap: .5rem 1.25rem; margin: 0; }
+.guide-footer { padding: 1.35rem 0 5rem; border-top: 1px solid var(--guide-line); color: var(--guide-body); font-size: .88rem; }
+.guide-footer .container { display: flex; flex-wrap: wrap; gap: .55rem 1.3rem; }
+@media (max-width: 800px) {
+  .guide-grid, .guide-layout { grid-template-columns: 1fr; }
+  .guide-checklist { order: -1; }
+}
