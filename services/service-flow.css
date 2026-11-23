@@ -32,7 +32,7 @@
   border-radius: 999px;
   background: var(--flow-tint);
   color: var(--flow-deep);
-  font-size: .67rem;
+  font-size: .6875rem;
   font-weight: 750;
 }
 
@@ -122,7 +122,7 @@
 .service-flow .service-flow__record > .service-flow__record-label {
   margin: 0 0 .32rem;
   color: var(--flow-deep);
-  font-size: .65rem;
+  font-size: .6875rem;
   font-weight: 750;
   letter-spacing: .07em;
   text-transform: uppercase;
@@ -185,7 +185,7 @@
   .service-flow { --flow-source: 24%; --flow-gap: .9rem; }
   .service-flow__record { padding: .75rem; }
   .service-flow .service-flow__record > p { font-size: .82rem; }
-  .service-flow .service-flow__record > .service-flow__record-label { font-size: .61rem; }
+  .service-flow .service-flow__record > .service-flow__record-label { font-size: .6875rem; }
   .service-flow__sources li > span { width: 30px; }
-  .service-flow__sources li > strong { font-size: .68rem; }
+  .service-flow__sources li > strong { font-size: .6875rem; }
 }

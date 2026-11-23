@@ -7,7 +7,7 @@ window.GURU.chatbotData.register([
     responses: {
       en: [
         "Everything we build is mobile-first — designed for the phone in your customer's hand before anything else. No broken layouts, no horizontal scrolling, fast even on 4G.",
-        "Yes, 100%. We design for mobile first and scale up to desktop, and every build is tested on real phone, tablet, and desktop sizes.",
+        "Yes. We design for mobile first and scale up to desktop, and every build is tested on real phone, tablet, and desktop sizes.",
       ],
       hi: [
         "Bilkul! Hum mobile-first banate hain — pehle phone ke liye design, phir desktop. Har device par test hota hai.",

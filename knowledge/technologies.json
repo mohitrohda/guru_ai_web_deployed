@@ -1,0 +1,47 @@
+{
+  "_about": "Only technology statements that appear on the website. The site does not publish a programming-language or framework list, so the assistant must not invent one.",
+  "chunks": [
+    {
+      "id": "tech-stack",
+      "type": "technology",
+      "title": "Technology stack and approach",
+      "url": "/services/",
+      "keywords": [
+        "technology",
+        "tech stack",
+        "stack",
+        "framework",
+        "language",
+        "react",
+        "node",
+        "python",
+        "java",
+        "flutter",
+        "database",
+        "cloud",
+        "aws",
+        "azure",
+        "which technology",
+        "kaunsi technology"
+      ],
+      "text": "GURU AI does not publish a fixed technology list on its website: the stack is chosen per project based on the requirement, and a realistic scope is agreed before work starts. What the website states: websites are mobile-first, production-ready, with security headers and structured data; the GURU AI billing product grew from a Python and Tkinter application; mobile work covers Android and cross-platform apps; cloud and DevOps work includes CI/CD, containers, infrastructure as code, monitoring and cloud migration; chatbots can start rule-based and upgrade to AI models. For a specific technology question, the team can answer on WhatsApp or email."
+    },
+    {
+      "id": "tech-ai",
+      "type": "technology",
+      "title": "AI and machine learning approach",
+      "url": "/services/ai-consulting",
+      "keywords": [
+        "ai",
+        "machine learning",
+        "ml",
+        "llm",
+        "openai",
+        "generative",
+        "model",
+        "artificial intelligence"
+      ],
+      "text": "GURU AI adds AI to existing websites and businesses without a full rebuild: chatbots, automation or smart features. AI consulting helps decide where AI is genuinely useful. AI engineering covers generative AI applications, knowledge assistants, custom ML models, computer vision, document AI, predictive analytics and MLOps."
+    }
+  ]
+}

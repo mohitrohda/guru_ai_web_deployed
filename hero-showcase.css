@@ -31,7 +31,7 @@
   }
 
   .nx-hero-showcase .hero-showcase__demo.is-in-view .guru-crm__toast {
-    animation: hero-showcase-confirm 450ms 1s ease-out both, guru-crm-toast 4s 1s ease-in-out infinite;
+    animation: hero-showcase-confirm 450ms 1s ease-out both;
   }
 
   @keyframes hero-showcase-enter {

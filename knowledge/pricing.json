@@ -1,0 +1,31 @@
+{
+  "_about": "Pricing policy. The website publishes NO prices or price ranges. The assistant must never quote one.",
+  "chunks": [
+    {
+      "id": "pricing-policy",
+      "type": "pricing",
+      "title": "Pricing policy: custom quotes",
+      "url": "/#contact",
+      "keywords": [
+        "price",
+        "pricing",
+        "cost",
+        "quote",
+        "quotation",
+        "rate",
+        "budget",
+        "package",
+        "plan",
+        "charges",
+        "fees",
+        "discount",
+        "cheap",
+        "expensive",
+        "kitna",
+        "paisa",
+        "kiti"
+      ],
+      "text": "GURU AI works on custom quotes per project. There are no published fixed prices, rate cards or price ranges, and the assistant cannot estimate a price. A quote is prepared from the requirements (features, scale, timeline). The website says a clear custom quote usually follows within 24 hours of sharing requirements on WhatsApp or the contact form. Budgets can be shared optionally when starting an enquiry; this does not commit either side."
+    }
+  ]
+}

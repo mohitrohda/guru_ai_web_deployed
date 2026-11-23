@@ -1,0 +1,44 @@
+{
+  "_about": "How GURU AI works. From the homepage 'How we work' section.",
+  "chunks": [
+    {
+      "id": "process-steps",
+      "type": "process",
+      "title": "How GURU AI works: five steps",
+      "url": "/#process",
+      "keywords": [
+        "process",
+        "how do you work",
+        "steps",
+        "workflow",
+        "methodology",
+        "stages",
+        "kaise kaam",
+        "kasa kaam",
+        "engagement",
+        "start",
+        "onboarding"
+      ],
+      "text": "Five clear steps. 1 Discover: understand the business, goals and users before writing code. 2 Design: wireframes and a visual direction the client approves, so there are no surprises. 3 Build: clean, modular development with regular previews the client can open on their phone. 4 Test: checks across key devices, browsers and business workflows, including performance, accessibility and security. 5 Launch & Support: deployment, monitoring and post-launch support. Clients work directly with the founders and senior engineers; calls are scheduled around the client's time zone and updates are written."
+    },
+    {
+      "id": "process-start",
+      "type": "process",
+      "title": "How to start a project",
+      "url": "/#contact",
+      "keywords": [
+        "start",
+        "begin",
+        "project",
+        "enquiry",
+        "inquiry",
+        "get started",
+        "hire",
+        "new project",
+        "requirement",
+        "quote"
+      ],
+      "text": "To start: share a short description of the project through this assistant (it can take the details and pass them to the team once the visitor confirms), the homepage contact form, WhatsApp or email. The team then replies with next steps and, for pricing, a custom quote. Nothing is booked or priced automatically."
+    }
+  ]
+}

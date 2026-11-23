@@ -1,0 +1,20 @@
+# Copy to .dev.vars for local testing with `wrangler pages dev`. NEVER commit .dev.vars.
+AI_API_BASE_URL=https://api.openai.com/v1
+AI_API_KEY=replace-me
+AI_MODEL=gpt-4o-mini
+
+# Lead notification email (optional). Provider: resend | brevo
+EMAIL_PROVIDER=resend
+EMAIL_API_KEY=replace-me
+LEAD_NOTIFY_TO=sales@guruaitechnologies.com
+LEAD_NOTIFY_FROM=GURU AI Website <leads@guruaitechnologies.com>
+
+# Cloudflare Turnstile (optional but recommended)
+TURNSTILE_SITE_KEY=replace-me
+TURNSTILE_SECRET_KEY=replace-me
+
+# Protects GET /api/admin/leads (optional). Use a long random string.
+ADMIN_TOKEN=replace-me
+
+# Salt for hashing visitor IPs in rate limiting
+RATE_LIMIT_SALT=replace-me
