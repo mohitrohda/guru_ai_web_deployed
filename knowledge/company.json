@@ -1,0 +1,127 @@
+{
+  "_about": "Verified company profile. Every fact here appears on the live website (index.html, about.html, PRODUCT.md). Do not add claims that are not on the site.",
+  "core": {
+    "name": "GURU AI TECHNOLOGIES",
+    "shortName": "GURU AI",
+    "location": "Pune, Maharashtra, India",
+    "phone": "+91 80876 95569",
+    "whatsappUrl": "https://wa.me/918087695569",
+    "email": "contact@guruaitechnologies.com",
+    "hours": "Monday to Saturday, 10:00 AM to 7:00 PM IST",
+    "website": "https://guruaitechnologies.com",
+    "languages": [
+      "English",
+      "Hinglish",
+      "Roman Marathi"
+    ]
+  },
+  "chunks": [
+    {
+      "id": "company-profile",
+      "type": "company",
+      "title": "About GURU AI TECHNOLOGIES",
+      "url": "/about",
+      "keywords": [
+        "about",
+        "company",
+        "who",
+        "studio",
+        "pune",
+        "founder",
+        "team",
+        "gururai",
+        "guru ai",
+        "kaun",
+        "kon"
+      ],
+      "text": "GURU AI TECHNOLOGIES is a software and AI studio based in Pune, Maharashtra, India. It began with web development and grew into custom software, billing systems, AI chatbots and business automation. The studio focuses on the businesses behind the brief: salons, clinics, retail shops, manufacturers and local service providers. Websites, custom software, chatbots and automation are delivered remotely for clients in India and internationally; the GST-focused billing software serves Indian businesses. The team is led by a Founder & CEO (engineering and technical direction) and a Managing Director (delivery and client relationships). Clients speak directly with the people building their product, with no account-management layer."
+    },
+    {
+      "id": "company-positioning",
+      "type": "company",
+      "title": "Why choose GURU AI",
+      "url": "/#why",
+      "keywords": [
+        "why",
+        "choose",
+        "different",
+        "advantage",
+        "benefit",
+        "trust",
+        "quality",
+        "security",
+        "mobile-first"
+      ],
+      "text": "Four principles: production-grade engineering (clean, modular code ready for real traffic); security by default (hardened headers, sanitized inputs, safe integrations); mobile-first design tested on real devices; and direct partnership with the people building the product, with clear updates, honest timelines and support after launch. One team covers billing software, AI chatbots, production websites and cloud infrastructure, so clients do not need to coordinate several vendors."
+    },
+    {
+      "id": "company-clients",
+      "type": "company",
+      "title": "Clients and case studies",
+      "url": "/case-studies/",
+      "keywords": [
+        "client",
+        "clients",
+        "customer",
+        "portfolio",
+        "case study",
+        "case studies",
+        "work",
+        "projects",
+        "reference",
+        "accusize",
+        "salon",
+        "jewellers",
+        "rangrez",
+        "maaax"
+      ],
+      "text": "Businesses named on the GURU AI website as clients: Accusize Gauges & Tools Pvt Ltd (precision gauge manufacturer, Pune: custom ERP, quotation system, website and calibration tracking), 7S Family Salon (multi-branch salon group: booking website and billing software), Infinity Unisex Salon (salon chain running the GURU AI chatbot for appointment booking), G Jewellers (jewellery retailer: billing and inventory software), Rangrez (premium cloth and fashion store, Maharashtra: business website) and MAAAX Men's Hub (multi-branch men's fashion retail chain, Pune: billing software). Three published case studies: Accusize Gauges & Tools, Salon + AI Chatbot (MR.COOL), and GURU AI's own Billing & Management Software."
+    },
+    {
+      "id": "case-accusize",
+      "type": "company",
+      "title": "Case study: Accusize Gauges & Tools",
+      "url": "/case-studies/accusize",
+      "keywords": [
+        "accusize",
+        "manufacturing",
+        "erp",
+        "calibration",
+        "gauge",
+        "case study"
+      ],
+      "text": "A website, an internal ERP and calibration tracking for a Pune precision gauge manufacturer. The ERP covers inventory, production and billing; calibration tracking keeps instrument history and records; the public website presents the catalogue and business."
+    },
+    {
+      "id": "case-salon",
+      "type": "company",
+      "title": "Case study: Salon + AI chatbot",
+      "url": "/case-studies/salon-ai-chatbot",
+      "keywords": [
+        "salon",
+        "chatbot",
+        "mr.cool",
+        "appointment",
+        "beauty",
+        "case study"
+      ],
+      "text": "Mobile-first websites and MR.COOL, GURU AI's reusable AI chatbot, help Pune salons answer common questions and guide customers toward appointments, even when the front desk is busy. Work covers salon clients including Infinity Unisex Salon and The 7S Family Salon."
+    },
+    {
+      "id": "case-billing",
+      "type": "company",
+      "title": "Case study: GURU AI Billing & Management Software",
+      "url": "/case-studies/billing-software-gat",
+      "keywords": [
+        "billing",
+        "gst",
+        "invoice",
+        "inventory",
+        "python",
+        "tkinter",
+        "case study"
+      ],
+      "text": "An internal product story: GURU AI rebuilt its earlier Python and Tkinter billing application into Billing & Management Software with GST-ready invoicing, inventory tracking and daily reporting. It is the shared foundation behind 16 industry-specific billing systems."
+    }
+  ]
+}

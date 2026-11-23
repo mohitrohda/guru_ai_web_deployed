@@ -1,0 +1,140 @@
+{
+  "_about": "Curated service overview. Per-page detail is auto-extracted from the site by scripts/build-kb.mjs.",
+  "chunks": [
+    {
+      "id": "services-overview",
+      "type": "service",
+      "title": "All GURU AI services",
+      "url": "/services/",
+      "keywords": [
+        "services",
+        "offer",
+        "provide",
+        "what do you do",
+        "kya karte",
+        "kay karta",
+        "list",
+        "capabilities"
+      ],
+      "text": "GURU AI offers ten core services: AI-Powered Websites, Custom Software Development (CRM, ERP, HRMS, LMS, inventory, property management, helpdesk, e-commerce platforms, BI dashboards, SaaS platforms, document management, customer portals, fleet management and AI agents), AI Business Automation, AI Chatbots & Voice Assistants, Mobile App Development (Android and cross-platform), Business Billing Software (16 Indian industry verticals), Digital Marketing & Branding, AI Consulting, Cloud & DevOps Solutions and Cyber Security Solutions. A wider catalogue of specialised services (AI engineering, data and analytics, e-commerce, quality engineering, emerging technology, industry solutions and more) is listed under Service catalog."
+    },
+    {
+      "id": "services-ai-engineering",
+      "type": "service",
+      "title": "AI engineering services",
+      "url": "/services/ai-engineering/",
+      "keywords": [
+        "ai",
+        "machine learning",
+        "ml",
+        "computer vision",
+        "generative",
+        "mlops",
+        "predictive",
+        "document ai",
+        "llm",
+        "knowledge assistant",
+        "data engineering",
+        "model"
+      ],
+      "text": "AI engineering pages cover generative AI applications, AI knowledge assistants, custom ML model development, computer vision, document AI and data extraction, predictive analytics and forecasting, MLOps and model deployment, data engineering and migration, API development and integrations, legacy software modernisation, software testing and QA, UI/UX design and prototyping, and website and software maintenance."
+    },
+    {
+      "id": "services-crm-erp-hrms",
+      "type": "service",
+      "title": "CRM, ERP and HRMS development",
+      "url": "/services/software-development",
+      "keywords": [
+        "crm",
+        "erp",
+        "hrms",
+        "hr",
+        "payroll",
+        "enterprise",
+        "custom software",
+        "internal system",
+        "business software"
+      ],
+      "text": "GURU AI builds custom CRM, ERP and HRMS systems as part of its Custom Software Development service. Dedicated pages: CRM development (/services/software-development/crm-development), ERP development (/services/software-development/erp-development) and HRMS development (/services/software-development/hrms-development). An internal ERP for a Pune precision manufacturer is published as a case study."
+    },
+    {
+      "id": "services-billing",
+      "type": "service",
+      "title": "Billing software for 16 industries",
+      "url": "/services/billing-software",
+      "keywords": [
+        "billing",
+        "gst",
+        "invoice",
+        "salon",
+        "gym",
+        "manufacturing",
+        "wholesale",
+        "garage",
+        "hospital",
+        "pharmacy",
+        "retail",
+        "fashion",
+        "textile",
+        "jewellery",
+        "hotel",
+        "restaurant",
+        "event",
+        "coaching",
+        "rental"
+      ],
+      "text": "GST-ready billing and management software adapted to 16 industries: salon & spa, gym & fitness studio, manufacturing, wholesale & distributor, automobile garage, hospital & clinic, pharmacy & medical store, retail shop, fashion & apparel, textile & cloth store, jewellery shop, hotel & lodge, restaurant & cafe, event & banquet, coaching & school fee management, and rental business. Industry overviews are on the Industries pages."
+    },
+    {
+      "id": "services-chatbots",
+      "type": "service",
+      "title": "AI chatbots and voice assistants",
+      "url": "/services/chatbots-voice",
+      "keywords": [
+        "chatbot",
+        "bot",
+        "assistant",
+        "voice",
+        "whatsapp",
+        "multilingual",
+        "lead",
+        "hinglish",
+        "marathi"
+      ],
+      "text": "AI chatbots and voice assistants that answer customers around the clock in English, Hinglish and Roman Marathi, for websites and WhatsApp. They can greet visitors, answer FAQs from information the business approves, collect details needed to help, qualify leads and hand over to a person when judgment is needed. The architecture allows starting with a rule-based assistant and upgrading to advanced AI models without rebuilding."
+    },
+    {
+      "id": "services-mobile",
+      "type": "service",
+      "title": "Mobile app development",
+      "url": "/services/mobile-apps",
+      "keywords": [
+        "mobile",
+        "app",
+        "android",
+        "ios",
+        "cross-platform",
+        "play store",
+        "application"
+      ],
+      "text": "Android and cross-platform mobile apps focused on fast, reliable experiences on the devices customers really own, with offline resilience where it matters and a clear path to the Play Store. GURU AI says honestly when a great mobile website is the smarter first step instead of an app."
+    },
+    {
+      "id": "services-automation",
+      "type": "service",
+      "title": "AI business automation",
+      "url": "/services/ai-automation",
+      "keywords": [
+        "automation",
+        "workflow",
+        "rpa",
+        "process",
+        "integration",
+        "automate",
+        "approval",
+        "notification"
+      ],
+      "text": "AI Business Automation finds repetitive loops (daily reports compiled by hand, forgotten follow-ups, data typed from one system into another) and closes them. It starts by mapping the actual workflows, then automates the highest-impact pieces first: customer follow-ups, report generation, reminders, data syncing and document creation. A workflow audit, automated follow-ups, smart reminders and alerts, and AI-assisted processing are included. Specialised automation topics (BPA, RPA, no-code/low-code, orchestration, approvals and notifications) are listed under the Service catalog."
+    }
+  ]
+}

@@ -1,0 +1,100 @@
+{
+  "_about": "Questions and answers verbatim from the homepage FAQ section (also published as FAQPage JSON-LD). Page-level FAQs are auto-extracted.",
+  "chunks": [
+    {
+      "id": "faq-cost",
+      "type": "faq",
+      "title": "FAQ: How much does a website or software project cost?",
+      "url": "/#faq",
+      "keywords": [
+        "cost",
+        "price",
+        "pricing",
+        "how much",
+        "quote",
+        "budget",
+        "kitna",
+        "paisa"
+      ],
+      "text": "Every business is different, so GURU AI does not publish fixed prices. Share your requirements on WhatsApp or through the contact form and the team sends a clear, custom quote, usually within 24 hours."
+    },
+    {
+      "id": "faq-time",
+      "type": "faq",
+      "title": "FAQ: How long does a typical project take?",
+      "url": "/#faq",
+      "keywords": [
+        "time",
+        "timeline",
+        "duration",
+        "how long",
+        "weeks",
+        "delivery",
+        "kitna time",
+        "kab"
+      ],
+      "text": "A premium business website usually takes 1 to 3 weeks. Custom software, apps and automation projects are scoped individually: a realistic timeline is given before work starts, with honest updates throughout."
+    },
+    {
+      "id": "faq-mobile",
+      "type": "faq",
+      "title": "FAQ: Will my website work well on mobile?",
+      "url": "/#faq",
+      "keywords": [
+        "mobile",
+        "responsive",
+        "phone",
+        "tablet"
+      ],
+      "text": "Yes. Designs are mobile-first and tested on real phone, tablet and desktop sizes, with no broken layouts, no horizontal scrolling and fast loading even on 4G."
+    },
+    {
+      "id": "faq-support",
+      "type": "faq",
+      "title": "FAQ: Do you provide support after launch?",
+      "url": "/#faq",
+      "keywords": [
+        "support",
+        "maintenance",
+        "after launch",
+        "post-launch",
+        "updates",
+        "backup"
+      ],
+      "text": "Yes. Every project includes post-launch support, and ongoing maintenance plans are available for updates, backups and improvements."
+    },
+    {
+      "id": "faq-ai-existing",
+      "type": "faq",
+      "title": "FAQ: Can you add AI to my existing website or business?",
+      "url": "/#faq",
+      "keywords": [
+        "existing",
+        "add ai",
+        "integrate",
+        "upgrade",
+        "already have"
+      ],
+      "text": "Yes. GURU AI can add chatbots, automation or smart features to what a business already has; a full rebuild is not required to benefit from AI."
+    },
+    {
+      "id": "faq-location",
+      "type": "faq",
+      "title": "FAQ: Where are you located and do you work remotely?",
+      "url": "/#faq",
+      "keywords": [
+        "location",
+        "where",
+        "remote",
+        "office",
+        "pune",
+        "address",
+        "international",
+        "abroad",
+        "kahan",
+        "kuthe"
+      ],
+      "text": "GURU AI is based in Pune, Maharashtra, and works with clients across India and internationally. It is remote-first: calls are scheduled around the client's time zone, updates happen in writing so nothing waits on a meeting, and projects can be previewed live from anywhere. No street address is published on the website."
+    }
+  ]
+}

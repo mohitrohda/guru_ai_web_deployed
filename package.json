@@ -1,0 +1,17 @@
+{
+  "name": "guru-ai-technologies-website",
+  "version": "2.0.0",
+  "private": true,
+  "description": "GURU AI Technologies static website + Cloudflare Pages Functions (AI assistant, lead capture).",
+  "scripts": {
+    "build:kb": "node scripts/build-kb.mjs",
+    "build:public": "node scripts/build-public.mjs",
+    "check": "node scripts/validate-site.mjs",
+    "db:create": "npx wrangler d1 create guru-ai-leads",
+    "db:migrate:local": "npx wrangler d1 migrations apply guru-ai-leads --local",
+    "db:migrate:remote": "npx wrangler d1 migrations apply guru-ai-leads --remote",
+    "dev": "npx wrangler pages dev . --d1 DB=guru-ai-leads",
+    "test": "node --test tests/api.test.mjs",
+    "test:crawl": "node tests/crawl.mjs"
+  }
+}

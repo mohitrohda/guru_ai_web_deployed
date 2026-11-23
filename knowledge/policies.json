@@ -1,0 +1,44 @@
+{
+  "_about": "Business and privacy policies as published on the site (see /legal/*.html).",
+  "chunks": [
+    {
+      "id": "policy-privacy",
+      "type": "policy",
+      "title": "Privacy and data handling",
+      "url": "/legal/privacy",
+      "keywords": [
+        "privacy",
+        "data",
+        "gdpr",
+        "personal",
+        "consent",
+        "cookies",
+        "terms",
+        "policy",
+        "information",
+        "security",
+        "safe",
+        "confidential"
+      ],
+      "text": "GURU AI publishes Privacy, Terms and Cookies pages (/legal/privacy, /legal/terms, /legal/cookies). Through this assistant, details are only stored when the visitor explicitly confirms and consents to a project enquiry; full chat conversations are not stored. The assistant never asks for passwords, payment details or OTPs."
+    },
+    {
+      "id": "policy-commitments",
+      "type": "policy",
+      "title": "What the assistant can and cannot promise",
+      "url": "/#contact",
+      "keywords": [
+        "guarantee",
+        "promise",
+        "warranty",
+        "commitment",
+        "certification",
+        "sla",
+        "contract",
+        "agreement",
+        "nda"
+      ],
+      "text": "The website publishes no guarantees, certifications, SLAs or contract terms, so the assistant does not state any. Questions about contracts, NDAs, guarantees or legal terms should go to the team on WhatsApp or email."
+    }
+  ]
+}
