@@ -70,7 +70,7 @@
 .site-nav__brand span { display: grid; gap: .2rem; line-height: 1; }
 .site-nav__brand strong { color: var(--site-nav-ink); font-size: 1.06rem; letter-spacing: .015em; }
 .site-nav__brand em { color: #2256d2; font-style: normal; }
-.site-nav__brand small { color: #304966; font-size: .52rem; font-weight: 750; letter-spacing: .14em; }
+.site-nav__brand small { color: #304966; font-size: .6875rem; font-weight: 750; letter-spacing: .14em; }
 
 .site-nav__links,
 .site-nav__service-links {
@@ -140,7 +140,7 @@
   inset: calc(100% + .55rem) var(--site-nav-inset) auto;
   max-width: 1280px;
   margin-inline: auto;
-  padding: clamp(.9rem, 2vw, 1.4rem);
+  padding: clamp(1rem, 2.5vw, 1.75rem);
   border: 1px solid var(--site-nav-line);
   border-radius: 16px;
   background: #fff;

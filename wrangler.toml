@@ -1,0 +1,19 @@
+# Cloudflare Pages configuration for GURU AI Technologies.
+#
+# Secrets (AI_API_KEY, EMAIL_API_KEY, TURNSTILE_SECRET_KEY, ADMIN_TOKEN ...) are NOT stored here.
+# Set them in: Cloudflare dashboard > Workers & Pages > guru-ai-technologies > Settings > Variables and Secrets
+# (see ENVIRONMENT-VARIABLES.md).
+#
+# D1 binding: the simplest route is the dashboard (Settings > Bindings > D1 database > Variable name: DB).
+# If you prefer config-as-code, run `npx wrangler d1 create guru-ai-leads`, then uncomment the block
+# below and paste the real database_id. Leaving the placeholder id in place would FAIL the deploy,
+# which is why it is commented out by default.
+name = "guru-ai-technologies"
+compatibility_date = "2025-01-01"
+pages_build_output_dir = "."
+
+# [[d1_databases]]
+# binding = "DB"
+# database_name = "guru-ai-leads"
+# database_id = "PASTE-REAL-DATABASE-ID-HERE"
+# migrations_dir = "migrations"
