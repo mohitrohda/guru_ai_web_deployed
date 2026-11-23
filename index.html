@@ -52,19 +52,6 @@
   <script defer src="homepage-interactions.js"></script>
   <script defer src="hero-showcase.js"></script>
   <script defer src="testimonials.js"></script>
-  <script defer src="chatbot/data/knowledge.js"></script>
-  <script defer src="chatbot/data/greetings.js"></script>
-  <script defer src="chatbot/data/faq.js"></script>
-  <script defer src="chatbot/data/services-qa.js"></script>
-  <script defer src="chatbot/data/business-qa.js"></script>
-  <script defer src="chatbot/data/pricing-contact.js"></script>
-  <script defer src="chatbot/data/smalltalk.js"></script>
-  <script defer src="chatbot/data/extra-qa.js"></script>
-  <script defer src="chatbot/data/fallback.js"></script>
-  <script defer src="chatbot/context.js"></script>
-  <script defer src="chatbot/engine.js"></script>
-  <script defer src="chatbot/provider.js"></script>
-  <script defer src="chatbot/ui.js"></script>
 
   <!-- Styles -->
 
@@ -127,7 +114,6 @@
         "url": "https://guruaitechnologies.com/",
         "telephone": "+918087695569",
         "email": "contact@guruaitechnologies.com",
-        "priceRange": "$$",
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "Pune",
@@ -191,16 +177,16 @@
         "@id": "https://guruaitechnologies.com/#services",
         "name": "Services",
         "itemListElement": [
-          { "@type": "ListItem", "position": 1, "name": "AI-Powered Websites", "url": "https://guruaitechnologies.com/services/ai-websites.html" },
-          { "@type": "ListItem", "position": 2, "name": "Custom Software Development", "url": "https://guruaitechnologies.com/services/software-development.html" },
-          { "@type": "ListItem", "position": 3, "name": "AI Business Automation", "url": "https://guruaitechnologies.com/services/ai-automation.html" },
-          { "@type": "ListItem", "position": 4, "name": "AI Chatbots & Voice Assistants", "url": "https://guruaitechnologies.com/services/chatbots-voice.html" },
-          { "@type": "ListItem", "position": 5, "name": "Mobile App Development", "url": "https://guruaitechnologies.com/services/mobile-apps.html" },
-          { "@type": "ListItem", "position": 6, "name": "Business Billing Software", "url": "https://guruaitechnologies.com/services/billing-software.html" },
-          { "@type": "ListItem", "position": 7, "name": "Digital Marketing & Branding", "url": "https://guruaitechnologies.com/services/digital-marketing.html" },
-          { "@type": "ListItem", "position": 8, "name": "AI Consulting", "url": "https://guruaitechnologies.com/services/ai-consulting.html" },
-          { "@type": "ListItem", "position": 9, "name": "Cloud & DevOps Solutions", "url": "https://guruaitechnologies.com/services/cloud-devops.html" },
-          { "@type": "ListItem", "position": 10, "name": "Cyber Security Solutions", "url": "https://guruaitechnologies.com/services/cyber-security.html" }
+          { "@type": "ListItem", "position": 1, "name": "AI-Powered Websites", "url": "https://guruaitechnologies.com/services/ai-websites" },
+          { "@type": "ListItem", "position": 2, "name": "Custom Software Development", "url": "https://guruaitechnologies.com/services/software-development" },
+          { "@type": "ListItem", "position": 3, "name": "AI Business Automation", "url": "https://guruaitechnologies.com/services/ai-automation" },
+          { "@type": "ListItem", "position": 4, "name": "AI Chatbots & Voice Assistants", "url": "https://guruaitechnologies.com/services/chatbots-voice" },
+          { "@type": "ListItem", "position": 5, "name": "Mobile App Development", "url": "https://guruaitechnologies.com/services/mobile-apps" },
+          { "@type": "ListItem", "position": 6, "name": "Business Billing Software", "url": "https://guruaitechnologies.com/services/billing-software" },
+          { "@type": "ListItem", "position": 7, "name": "Digital Marketing & Branding", "url": "https://guruaitechnologies.com/services/digital-marketing" },
+          { "@type": "ListItem", "position": 8, "name": "AI Consulting", "url": "https://guruaitechnologies.com/services/ai-consulting" },
+          { "@type": "ListItem", "position": 9, "name": "Cloud & DevOps Solutions", "url": "https://guruaitechnologies.com/services/cloud-devops" },
+          { "@type": "ListItem", "position": 10, "name": "Cyber Security Solutions", "url": "https://guruaitechnologies.com/services/cyber-security" }
         ]
       }
     ]
@@ -363,7 +349,7 @@
     .creative-home .hero__proof { border-left: 2px solid #aac1ed; padding-left: 1rem; line-height: 1.65; }
     .creative-home .hero-live { border: 1px solid #2b4267; background: linear-gradient(165deg,#0e1e3d 0%,#122a52 55%,#0a1830 100%); border-radius: 28px; box-shadow: 0 24px 65px rgba(10,24,48,.24); }
     .creative-home .btn { border-radius: 12px; min-height: 44px; }
-    .creative-home .btn--signal { background: #235be0; color: #fff; box-shadow: 0 6px 16px rgba(35,91,224,.16); }
+    .creative-home .btn--signal { background: #235be0; color: #fff; box-shadow: 0 6px 16px rgba(16, 33, 64, .16); }
     .creative-home .problem-grid { counter-reset: business-problem; }
     .creative-home .problem-card { position: relative; border: 1px solid #e0e7f1; border-radius: 18px; background: #fff; padding: 1.5rem; box-shadow: 0 3px 14px rgba(14,30,61,.025); }
     .creative-home .problem-card::after { counter-increment: business-problem; content: "0" counter(business-problem); position: absolute; top: 1.5rem; right: 1.25rem; color: #6b7a91; font: 500 .75rem var(--f-mono, monospace); }
@@ -440,7 +426,7 @@
 .mega--expanded-services .mega__inner { width:calc(100% - 48px); max-width:1480px; margin-inline:auto; column-gap:clamp(1.25rem,2vw,2rem); row-gap:2rem; align-items:start; padding-block:1.75rem 2rem; }
 .mega--expanded-services .mega__col { min-width:0; }
 .mega--expanded-services .mega__col--wide { grid-column:auto; }
-.mega--expanded-services .mega__heading { color:#425b7d; font-size:.65rem; line-height:1.6; margin-bottom:.8rem; }
+.mega--expanded-services .mega__heading { color:#425b7d; font-size:.75rem; line-height:1.6; margin-bottom:.8rem; }
 .mega--expanded-services .mega__link { font-size:.8125rem; line-height:1.5; padding:.38rem 0; color:#425571; word-break:normal; overflow-wrap:normal; hyphens:none; }
 .mega--expanded-services .mega__link--sub { font-size:.775rem; color:#5b6e87; padding-left:.8rem; }
 .mega--expanded-services .mega__link:hover,.mega--expanded-services .mega__link:focus-visible { color:#174fce; }
@@ -448,10 +434,10 @@
 .mega--expanded-services .mega__col--wide .mega__grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.15rem 1rem; }
 .mega--expanded-services .mega__viewall { font-size:.78rem; line-height:1.6; margin-top:1rem; }
 .mega--expanded-services .mega__col--engineering { border-left:1px solid #e0e8f4; padding-left:clamp(1rem,1.5vw,1.5rem); }
-.mega--expanded-services .mega__subheading { font:600 .6rem var(--f-mono,monospace); letter-spacing:.06em; text-transform:uppercase; color:#617694; margin:0 0 .35rem; }
+.mega--expanded-services .mega__subheading { font:600 .6875rem var(--f-mono,monospace); letter-spacing:.06em; text-transform:uppercase; color:#617694; margin:0 0 .35rem; }
 .mega--expanded-services .mega__subheading--spaced { margin-top:1.15rem; }
 .mnav-engineering-heading { border-top:1px solid #dce5f3; padding-top:1.25rem; margin:1rem 0 .4rem; font:600 .9rem var(--f-display,sans-serif); color:#17385f; }
-.mnav-engineering-subheading { font:500 .625rem var(--f-mono,monospace); text-transform:uppercase; letter-spacing:.06em; color:#61718b; margin:.9rem 0 .35rem; }
+.mnav-engineering-subheading { font:500 .6875rem var(--f-mono,monospace); text-transform:uppercase; letter-spacing:.06em; color:#61718b; margin:.9rem 0 .35rem; }
 @media(min-width:900px) and (max-width:1279px) { .mega--expanded-services .mega__inner { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(min-width:1280px) { .mega--expanded-services .mega__inner { grid-template-columns:minmax(0,1.04fr) minmax(0,.92fr) minmax(0,1.15fr) minmax(0,1.14fr); } }
 </style>
@@ -505,7 +491,7 @@
 .hp-goal-layout { display:grid; gap:1rem; }
 .hp-goal-options { display:grid; gap:.65rem; align-content:start; }
 .hp-goal-options a { display:flex; align-items:center; gap:1rem; min-height:68px; padding:1.1rem 1.25rem; border:1px solid #dbe5f3; border-radius:14px; background:#fff; text-decoration:none; color:#102443; }
-.hp-goal-options a > span:first-child { font-size:.625rem; color:#6b7c94; }
+.hp-goal-options a > span:first-child { font-size:.625rem; color:#56637a; }
 .hp-goal-options a > span:last-child { margin-left:auto; color:#194ab5; }
 .hp-goal-options strong { font-family:var(--f-display,sans-serif); font-size:1rem; font-weight:600; }
 .hp-goal-options a[aria-current='true'] { border-color:#9ab9ec; background:#edf3ff; box-shadow:0 0 0 1px #245bdd12; }
@@ -1354,11 +1340,11 @@
   <!-- ============ NAVBAR ============ -->
   <header class="site-nav">
   <div class="site-nav__bar">
-    <a class="site-nav__brand" href="index.html" aria-label="Guru AI Technologies home">
+    <a class="site-nav__brand" href="./" aria-label="Guru AI Technologies home">
       <img class="site-nav__brand-icon" src="assets/icons/apple-touch-icon.png" width="40" height="40" alt="" decoding="async">
       <span aria-hidden="true"><strong>GURU <em>AI</em></strong><small>TECHNOLOGIES</small></span>
     </a>
-    <a class="site-nav__browse" href="services/index.html">Services</a>
+    <a class="site-nav__browse" href="services/">Services</a>
     <button class="site-nav__toggle" type="button" aria-expanded="false" aria-controls="site-navigation" aria-label="Open menu" hidden>
       <span></span><span></span><span></span>
     </button>
@@ -1372,67 +1358,67 @@
                 <div class="site-nav__service-group">
                   <p>Websites &amp; apps</p>
                   <ul class="site-nav__service-links" aria-label="Websites &amp; apps">
-                    <li><a href="services/ai-websites.html">AI-powered websites</a></li>
-                    <li><a href="services/mobile-apps.html">Mobile apps</a></li>
-                    <li><a href="services/software-development/ecommerce-platform-development.html">E-commerce development</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/web-development/full-stack-development.html">Full-stack development</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/mobile-apps/cross-platform-app-development.html">Cross-platform apps</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/ecommerce/headless-commerce-development.html">Headless commerce</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/web-development/website-accessibility-optimization.html">Website accessibility</a></li>
+                    <li><a href="services/ai-websites">AI-powered websites</a></li>
+                    <li><a href="services/mobile-apps">Mobile apps</a></li>
+                    <li><a href="services/software-development/ecommerce-platform-development">E-commerce development</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/web-development/full-stack-development">Full-stack development</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/mobile-apps/cross-platform-app-development">Cross-platform apps</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/ecommerce/headless-commerce-development">Headless commerce</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/web-development/website-accessibility-optimization">Website accessibility</a></li>
                   </ul>
                 </div>
                 <div class="site-nav__service-group">
                   <p>Business software</p>
                   <ul class="site-nav__service-links" aria-label="Business software">
-                    <li><a href="services/software-development.html">Custom software</a></li>
-                    <li><a href="services/billing-software.html">Billing by industry</a></li>
-                    <li><a href="services/software-development/crm-development.html">CRM development</a></li>
-                    <li class="site-nav__extended"><a href="services/software-development/erp-development.html">ERP development</a></li>
-                    <li class="site-nav__extended"><a href="services/software-development/inventory-management-software.html">Inventory management</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/business-software/payroll-management-software.html">Payroll software</a></li>
-                    <li class="site-nav__extended"><a href="services/software-development/business-intelligence-dashboard-development.html">Data dashboards</a></li>
+                    <li><a href="services/software-development">Custom software</a></li>
+                    <li><a href="services/billing-software">Billing by industry</a></li>
+                    <li><a href="services/software-development/crm-development">CRM development</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/erp-development">ERP development</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/inventory-management-software">Inventory management</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/business-software/payroll-management-software">Payroll software</a></li>
+                    <li class="site-nav__extended"><a href="services/software-development/business-intelligence-dashboard-development">Data dashboards</a></li>
                   </ul>
                 </div>
                 <div class="site-nav__service-group">
                   <p>AI &amp; automation</p>
                   <ul class="site-nav__service-links" aria-label="AI &amp; automation">
-                    <li><a href="services/ai-automation.html">AI business automation</a></li>
-                    <li><a href="services/chatbots-voice.html">Chatbots &amp; voice assistants</a></li>
-                    <li><a href="services/ai-engineering/index.html">AI engineering</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/automation/workflow-automation-development.html">Workflow automation</a></li>
-                    <li class="site-nav__extended"><a href="services/ai-engineering/ai-knowledge-assistants.html">AI knowledge assistants</a></li>
-                    <li class="site-nav__extended"><a href="services/ai-engineering/document-ai-data-extraction.html">Document AI</a></li>
-                    <li class="site-nav__extended"><a href="services/ai-consulting.html">AI consulting</a></li>
+                    <li><a href="services/ai-automation">AI business automation</a></li>
+                    <li><a href="services/chatbots-voice">Chatbots &amp; voice assistants</a></li>
+                    <li><a href="services/ai-engineering/">AI engineering</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/automation/workflow-automation-development">Workflow automation</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-engineering/ai-knowledge-assistants">AI knowledge assistants</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-engineering/document-ai-data-extraction">Document AI</a></li>
+                    <li class="site-nav__extended"><a href="services/ai-consulting">AI consulting</a></li>
                   </ul>
                 </div>
                 <div class="site-nav__service-group">
                   <p>Cloud, security &amp; growth</p>
                   <ul class="site-nav__service-links" aria-label="Cloud, security &amp; growth">
-                    <li><a href="services/cloud-devops.html">Cloud &amp; DevOps</a></li>
-                    <li><a href="services/cyber-security.html">Cyber security</a></li>
-                    <li><a href="services/digital-marketing.html">Digital marketing</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/cloud-migration-services.html">Cloud migration</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/containerization-kubernetes-services.html">Containers &amp; Kubernetes</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/cybersecurity/penetration-testing.html">Penetration testing</a></li>
-                    <li class="site-nav__extended"><a href="services/more_services/digital-growth/local-seo-services.html">Local SEO</a></li>
+                    <li><a href="services/cloud-devops">Cloud &amp; DevOps</a></li>
+                    <li><a href="services/cyber-security">Cyber security</a></li>
+                    <li><a href="services/digital-marketing">Digital marketing</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/cloud-migration-services">Cloud migration</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cloud-operations/containerization-kubernetes-services">Containers &amp; Kubernetes</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/cybersecurity/penetration-testing">Penetration testing</a></li>
+                    <li class="site-nav__extended"><a href="services/more_services/digital-growth/local-seo-services">Local SEO</a></li>
                   </ul>
                 </div>
               </div>
               <div class="site-nav__service-footer">
-                <a href="services/index.html">Services overview <span aria-hidden="true">→</span></a>
-                <a href="services/more_services/index.html">Explore all 177 catalog services <span aria-hidden="true">↗</span></a>
+                <a href="services/">Services overview <span aria-hidden="true">→</span></a>
+                <a href="services/more_services/">Explore all 177 catalog services <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </details>
         </li>
-        <li><a class="site-nav__link" href="industries/index.html">Industries</a></li>
-        <li><a class="site-nav__link" href="case-studies/index.html">Case Studies</a></li>
-        <li><a class="site-nav__link" href="index.html#faq">FAQ</a></li>
-        <li><a class="site-nav__link" href="about.html">About</a></li>
-        <li class="site-nav__mobile-cta"><a class="site-nav__action" href="index.html#contact">Start a Project</a></li>
+        <li><a class="site-nav__link" href="industries/">Industries</a></li>
+        <li><a class="site-nav__link" href="case-studies/">Case Studies</a></li>
+        <li><a class="site-nav__link" href="./#faq">FAQ</a></li>
+        <li><a class="site-nav__link" href="about">About</a></li>
+        <li class="site-nav__mobile-cta"><a class="site-nav__action" href="./#contact">Start a Project</a></li>
       </ul>
     </nav>
-    <a class="site-nav__action site-nav__desktop-cta" href="index.html#contact">Start a Project</a>
+    <a class="site-nav__action site-nav__desktop-cta" href="./#contact">Start a Project</a>
   </div>
 </header>
 
@@ -1621,7 +1607,6 @@
     <section class="section" id="services" aria-labelledby="services-title">
       <div class="container">
         <div class="section__head">
-          <p class="eyebrow">Core services</p>
           <h2 id="services-title">What we build</h2>
         </div>
         <div class="home-services-carousel" data-service-carousel>
@@ -1630,110 +1615,98 @@
               <article class="home-service-card" data-service="automation" data-service-palette="teal" aria-labelledby="offer-automation">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m13 2-9 12h7l-1 8 10-12h-7l1-8z"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">01 / 12</span>
                 </div>
                 <h3 id="offer-automation">AI automation</h3>
                 <p class="home-service-card__summary">Connect your tools and automate follow-ups, data entry, and recurring tasks.</p>
-                <a class="hp-text-link" href="services/ai-automation.html" aria-label="Explore AI automation">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/ai-automation" aria-label="Explore AI automation">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="websites" data-service-palette="blue" aria-labelledby="offer-websites">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 4h20v14H2zM2 8h20M8 22h8m-4-4v4"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">02 / 12</span>
                 </div>
                 <h3 id="offer-websites">AI-powered websites</h3>
                 <p class="home-service-card__summary">Build a fast website that explains what you offer and makes it easy to enquire or book.</p>
-                <a class="hp-text-link" href="services/ai-websites.html" aria-label="Explore AI-powered websites">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/ai-websites" aria-label="Explore AI-powered websites">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="billing" data-service-palette="violet" aria-labelledby="offer-billing">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2V3zm3 5h6m-6 4h6m-6 4h3"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">03 / 12</span>
                 </div>
                 <h3 id="offer-billing">Billing &amp; inventory</h3>
                 <p class="home-service-card__summary">Create GST invoices, track stock, and see daily sales in one place.</p>
-                <a class="hp-text-link" href="services/billing-software.html" aria-label="Explore Billing &amp; inventory">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/billing-software" aria-label="Explore Billing &amp; inventory">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="software" data-service-palette="rose" aria-labelledby="offer-software">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m8 6-6 6 6 6m8-12 6 6-6 6m-3-14-2 16"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">04 / 12</span>
                 </div>
                 <h3 id="offer-software">Custom software</h3>
                 <p class="home-service-card__summary">Build tools around the work your team does every day, from internal portals to enterprise systems.</p>
-                <a class="hp-text-link" href="services/software-development.html" aria-label="Explore Custom software">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/software-development" aria-label="Explore Custom software">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="chatbots" data-service-palette="teal" aria-labelledby="offer-chatbots">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.5a7.5 7.5 0 0 1-7.5 7.5H4l1.8-4a7.5 7.5 0 1 1 14.2-3.5zM8 12h.01m4-.01h.01m4-.01h.01"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">05 / 12</span>
                 </div>
                 <h3 id="offer-chatbots">Chatbots &amp; voice assistants</h3>
                 <p class="home-service-card__summary">Answer questions, take bookings, and hand complex requests to your team.</p>
-                <a class="hp-text-link" href="services/chatbots-voice.html" aria-label="Explore Chatbots &amp; voice assistants">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/chatbots-voice" aria-label="Explore Chatbots &amp; voice assistants">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="mobile" data-service-palette="blue" aria-labelledby="offer-mobile">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 16h2"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">06 / 12</span>
                 </div>
                 <h3 id="offer-mobile">Mobile app development</h3>
                 <p class="home-service-card__summary">Build iOS and Android apps for customers, field teams, and day-to-day operations.</p>
-                <a class="hp-text-link" href="services/mobile-apps.html" aria-label="Explore Mobile app development">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/mobile-apps" aria-label="Explore Mobile app development">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="ecommerce" data-service-palette="violet" aria-labelledby="offer-ecommerce">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9h16l1 12H3L4 9zm4 0V7a4 4 0 1 1 8 0v2"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">07 / 12</span>
                 </div>
                 <h3 id="offer-ecommerce">E-commerce platforms</h3>
                 <p class="home-service-card__summary">Connect storefronts, payments, inventory, and order management in one online shop.</p>
-                <a class="hp-text-link" href="services/software-development/ecommerce-platform-development.html" aria-label="Explore E-commerce platforms">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/software-development/ecommerce-platform-development" aria-label="Explore E-commerce platforms">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="crm" data-service-palette="rose" aria-labelledby="offer-crm">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v16H3zM12 8h5m-5 4h5m-5 4h5m-8-6a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm-4 6a2.5 2.5 0 0 1 5 0"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">08 / 12</span>
                 </div>
                 <h3 id="offer-crm">CRM development</h3>
                 <p class="home-service-card__summary">Keep contacts, sales pipelines, and follow-up tasks in one shared workspace.</p>
-                <a class="hp-text-link" href="services/software-development/crm-development.html" aria-label="Explore CRM development">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/software-development/crm-development" aria-label="Explore CRM development">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="analytics" data-service-palette="teal" aria-labelledby="offer-analytics">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18M7 17v-4m4 4V9m4 8v-6m4 6V5"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">09 / 12</span>
                 </div>
                 <h3 id="offer-analytics">BI &amp; analytics dashboards</h3>
                 <p class="home-service-card__summary">Bring sales, stock, and operations data together so teams can spot changes early.</p>
-                <a class="hp-text-link" href="services/software-development/business-intelligence-dashboard-development.html" aria-label="Explore BI &amp; analytics dashboards">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/software-development/business-intelligence-dashboard-development" aria-label="Explore BI &amp; analytics dashboards">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="cloud" data-service-palette="blue" aria-labelledby="offer-cloud">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17a4 4 0 1 1 1-7.9 5 5 0 0 1 9.5 1.4A3.5 3.5 0 1 1 18 17H7zm5-3v8m-3-3 3 3 3-3"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">10 / 12</span>
                 </div>
                 <h3 id="offer-cloud">Cloud &amp; DevOps</h3>
                 <p class="home-service-card__summary">Set up repeatable deployments, monitoring, and reliable cloud infrastructure.</p>
-                <a class="hp-text-link" href="services/cloud-devops.html" aria-label="Explore Cloud &amp; DevOps">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/cloud-devops" aria-label="Explore Cloud &amp; DevOps">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="security" data-service-palette="violet" aria-labelledby="offer-security">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 2 8 4v5c0 5.2-3 8.7-8 11-5-2.3-8-5.8-8-11V6l8-4zm-3 10 2 2 4-4"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">11 / 12</span>
                 </div>
                 <h3 id="offer-security">Cyber security</h3>
                 <p class="home-service-card__summary">Find vulnerabilities and strengthen the systems that handle your business data.</p>
-                <a class="hp-text-link" href="services/cyber-security.html" aria-label="Explore Cyber security">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/cyber-security" aria-label="Explore Cyber security">Explore service <span aria-hidden="true">↗</span></a>
               </article>
               <article class="home-service-card" data-service="marketing" data-service-palette="rose" aria-labelledby="offer-marketing">
                 <div class="home-service-card__top">
                   <span class="home-service-card__icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v4h4l10 4V6L8 10H4zm4 4 2 6h3m8-10v4"/></svg></span>
-                  <span class="home-service-card__number" aria-hidden="true">12 / 12</span>
                 </div>
                 <h3 id="offer-marketing">Digital marketing &amp; branding</h3>
                 <p class="home-service-card__summary">Help the right customers find you through search, campaigns, and clear messaging.</p>
-                <a class="hp-text-link" href="services/digital-marketing.html" aria-label="Explore Digital marketing &amp; branding">Explore service <span aria-hidden="true">↗</span></a>
+                <a class="hp-text-link" href="services/digital-marketing" aria-label="Explore Digital marketing &amp; branding">Explore service <span aria-hidden="true">↗</span></a>
               </article>
             </div>
             <button class="home-services-carousel__arrow home-services-carousel__arrow--prev" type="button" data-service-direction="-1" aria-label="Previous service" aria-controls="core-service-cards" hidden>
@@ -1746,34 +1719,33 @@
           <div class="home-services-carousel__dots" data-service-dots role="group" aria-label="Choose a service" hidden></div>
         </div>
         <div class="home-services-catalog">
-          <a class="hp-text-link" href="services/more_services/index.html">View the full service catalog <span aria-hidden="true">↗</span></a>
+          <a class="hp-text-link" href="services/more_services/">View the full service catalog <span aria-hidden="true">↗</span></a>
         </div>
       </div>
     </section>
 
-<section class="section hp-work" id="featured-work" aria-labelledby="hp-work-title"><div class="container"><div class="hp-section-top"><div><p class="eyebrow">Selected work</p><h2 id="hp-work-title">See what we’ve built</h2></div><a class="hp-text-link" href="case-studies/index.html">Explore all case studies &rarr;</a></div><div class="hp-work-grid"><article class="hp-project"><a class="hp-project-visual" href="case-studies/accusize.html" aria-label="Read Accusize Gauges and Tools case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-accusize.webp" alt="Illustrative preview for the Accusize website and ERP project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Manufacturing / Website + ERP</p><h3>Accusize Gauges &amp; Tools</h3><p>A website and ERP for manufacturing operations and calibration tracking.</p><a class="hp-text-link" href="case-studies/accusize.html">Read the project story &nearr;</a></div></article><article class="hp-project"><a class="hp-project-visual" href="case-studies/salon-ai-chatbot.html" aria-label="Read A more helpful digital front desk case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-salon-chatbot.webp" alt="Illustrative preview for the salon website and AI chatbot project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Salon &amp; beauty / Website + AI</p><h3>A more helpful digital front desk</h3><p>Salon websites with a chatbot for questions and appointment requests.</p><a class="hp-text-link" href="case-studies/salon-ai-chatbot.html">Read the project story &nearr;</a></div></article><article class="hp-project"><a class="hp-project-visual" href="case-studies/billing-software-gat.html" aria-label="Read Built from our own billing workflow case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-billing-gat.webp" alt="Illustrative preview for the billing and management software project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Internal product / Billing software</p><h3>Built from our own billing workflow</h3><p>One place for invoices, inventory, and daily reporting.</p><a class="hp-text-link" href="case-studies/billing-software-gat.html">Read the project story &nearr;</a></div></article></div></div></section>
+<section class="section hp-work" id="featured-work" aria-labelledby="hp-work-title"><div class="container"><div class="hp-section-top"><div><h2 id="hp-work-title">See what we’ve built</h2></div><a class="hp-text-link" href="case-studies/">Explore all case studies &rarr;</a></div><div class="hp-work-grid"><article class="hp-project"><a class="hp-project-visual" href="case-studies/accusize" aria-label="Read Accusize Gauges and Tools case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-accusize.webp" alt="Illustrative preview for the Accusize website and ERP project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Manufacturing / Website + ERP</p><h3>Accusize Gauges &amp; Tools</h3><p>A website and ERP for manufacturing operations and calibration tracking.</p><a class="hp-text-link" href="case-studies/accusize">Read the project story &nearr;</a></div></article><article class="hp-project"><a class="hp-project-visual" href="case-studies/salon-ai-chatbot" aria-label="Read A more helpful digital front desk case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-salon-chatbot.webp" alt="Illustrative preview for the salon website and AI chatbot project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Salon &amp; beauty / Website + AI</p><h3>A more helpful digital front desk</h3><p>Salon websites with a chatbot for questions and appointment requests.</p><a class="hp-text-link" href="case-studies/salon-ai-chatbot">Read the project story &nearr;</a></div></article><article class="hp-project"><a class="hp-project-visual" href="case-studies/billing-software-gat" aria-label="Read Built from our own billing workflow case study"><span class="hp-browser-top"><i></i><i></i><i></i><span>Project illustration</span></span><span class="hp-project-window"><img src="assets/showcase/case-study-billing-gat.webp" alt="Illustrative preview for the billing and management software project" width="1600" height="900" loading="lazy" decoding="async"></span></a><div class="hp-project-copy"><p class="hp-label">Internal product / Billing software</p><h3>Built from our own billing workflow</h3><p>One place for invoices, inventory, and daily reporting.</p><a class="hp-text-link" href="case-studies/billing-software-gat">Read the project story &nearr;</a></div></article></div></div></section>
 
-<section class="section hp-goals" id="find-your-solution" aria-labelledby="hp-goals-title"><div class="container"><div class="hp-section-top"><div><p class="eyebrow">Start with your business</p><h2 id="hp-goals-title">Find a service by goal</h2></div><p>You do not need to know the technology yet. Choose a goal and explore a practical starting point.</p></div><div class="hp-goal-layout"><div class="hp-goal-options" aria-label="Choose a business goal">
-<a href="services/ai-websites.html" data-goal="leads" aria-controls="hp-goal-results" aria-current="true"><span>01</span><strong>Get more enquiries</strong><span aria-hidden="true">&rarr;</span></a>
-<a href="services/billing-software.html" data-goal="billing" aria-controls="hp-goal-results"><span>02</span><strong>Make billing simpler</strong><span aria-hidden="true">&rarr;</span></a>
-<a href="services/ai-automation.html" data-goal="automation" aria-controls="hp-goal-results"><span>03</span><strong>Reduce repetitive work</strong><span aria-hidden="true">&rarr;</span></a>
-<a href="services/software-development.html" data-goal="software" aria-controls="hp-goal-results"><span>04</span><strong>Build software that fits</strong><span aria-hidden="true">&rarr;</span></a></div><div class="hp-goal-result" id="hp-goal-results" aria-live="polite"><p class="hp-label">A practical starting point</p><h3>Make the first impression count.</h3><p>A clear website helps people understand your business. Chatbots and digital marketing can support the next conversation.</p><div class="hp-goal-links"><a href="services/ai-websites.html">AI-powered websites &nearr;</a><a href="services/chatbots-voice.html">AI chatbots &nearr;</a><a href="services/digital-marketing.html">Digital marketing &nearr;</a></div><a class="hp-text-link" data-goal-discuss href="#contact">Discuss this goal &rarr;</a></div></div></div></section>
+<section class="section hp-goals" id="find-your-solution" aria-labelledby="hp-goals-title"><div class="container"><div class="hp-section-top"><div><h2 id="hp-goals-title">Find a service by goal</h2></div><p>You do not need to know the technology yet. Choose a goal and explore a practical starting point.</p></div><div class="hp-goal-layout"><div class="hp-goal-options" aria-label="Choose a business goal">
+<a href="services/ai-websites" data-goal="leads" aria-controls="hp-goal-results" aria-current="true"><strong>Get more enquiries</strong><span aria-hidden="true">&rarr;</span></a>
+<a href="services/billing-software" data-goal="billing" aria-controls="hp-goal-results"><strong>Make billing simpler</strong><span aria-hidden="true">&rarr;</span></a>
+<a href="services/ai-automation" data-goal="automation" aria-controls="hp-goal-results"><strong>Reduce repetitive work</strong><span aria-hidden="true">&rarr;</span></a>
+<a href="services/software-development" data-goal="software" aria-controls="hp-goal-results"><strong>Build software that fits</strong><span aria-hidden="true">&rarr;</span></a></div><div class="hp-goal-result" id="hp-goal-results" aria-live="polite"><p class="hp-label">A practical starting point</p><h3>Make the first impression count.</h3><p>A clear website helps people understand your business. Chatbots and digital marketing can support the next conversation.</p><div class="hp-goal-links"><a href="services/ai-websites">AI-powered websites &nearr;</a><a href="services/chatbots-voice">AI chatbots &nearr;</a><a href="services/digital-marketing">Digital marketing &nearr;</a></div><a class="hp-text-link" data-goal-discuss href="#contact">Discuss this goal &rarr;</a></div></div></div></section>
 
-<section id="workflow" class="nx-workflow section" aria-labelledby="nx-flow-title"><div class="container"><div class="nx-flow-heading"><div><p class="eyebrow">A WORKFLOW IN ACTION</p><h2 id="nx-flow-title">From enquiry to confirmed booking</h2></div><p>See how a customer message can become a booking and a business record. This interactive example shows what a connected setup could do.</p></div><div class="nx-demo"><div class="nx-demo-toolbar"><span><i></i> WORKFLOW DEMO / SALON BOOKING</span></div><div class="nx-demo-layout"><div class="nx-flow-steps" role="group" aria-label="Explore workflow steps"><button type="button" class="nx-step is-active" data-nx-step="0" aria-pressed="true" aria-controls="nx-flow-screen"><span class="nx-step-num">01</span><span><strong>Message arrives</strong><small>A customer asks about availability.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="1" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">02</span><span><strong>AI analyses the enquiry</strong><small>The assistant checks the request and approved information.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="2" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">03</span><span><strong>Details are extracted</strong><small>Service, preferred time and contact details are organised.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="3" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">04</span><span><strong>CRM lead is created</strong><small>The enquiry is saved for your team to follow up.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="4" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">05</span><span><strong>Meeting is scheduled</strong><small>An available appointment time is selected.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="5" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">06</span><span><strong>Confirmation is sent</strong><small>The customer and your team receive the details.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button></div><div class="nx-flow-screen" id="nx-flow-screen"><div class="nx-screen-head"><span class="nx-avatar">S</span><div><strong>Studio appointments</strong><small>Illustrative customer conversation</small></div><span class="nx-status-dot"></span></div><div class="nx-screen-body"><div class="nx-message">Hi! Can I book a haircut tomorrow afternoon?<small>Customer enquiry</small></div><div class="nx-response nx-stage" data-flow-visible="1"><strong>Request understood</strong><p>Haircut enquiry, for tomorrow afternoon.</p><small>AI analysis · using approved service information</small></div><div class="nx-sync nx-stage" data-flow-visible="2"><span aria-hidden="true">↳</span><div><strong>Useful details captured</strong><p>Service: haircut · Preferred time: afternoon · Contact: from the enquiry.</p></div></div><div class="nx-sync nx-stage" data-flow-visible="3"><span aria-hidden="true">✓</span><div><strong>Lead created in the CRM</strong><p>The request and its context are ready for a team member to review.</p></div></div><div class="nx-booking nx-stage" data-flow-visible="4"><span aria-hidden="true">✓</span><div><small>APPOINTMENT SCHEDULED</small><strong>Haircut · Tomorrow, 2:30 PM</strong><p>Customer selected an available time.</p></div></div><div class="nx-sync nx-stage" data-flow-visible="5"><span aria-hidden="true">↗</span><div><strong>Confirmation sent</strong><p>The customer gets the appointment details. Your team can see the booking and lead record.</p></div></div></div><div class="nx-screen-footer"><span id="nx-flow-caption">01 / A message starts the journey.</span><span aria-hidden="true">● ● ●</span></div></div></div><div class="nx-demo-bottom"><p>Example only. Integrations, availability checks, and handover rules are configured for your business.</p><a href="services/ai-automation.html">Explore automation ↗</a></div></div>
-<details class="home-workflow-comparison"><summary>Compare manual and connected workflows</summary><div class="hp-comparison-grid"><div><p class="eyebrow">A different way to work</p><h2 id="hp-comparison-title">From separate tasks<br>to connected steps.</h2><p>See the idea behind a connected workflow. The right implementation starts with understanding your current process.</p><a class="hp-text-link" href="services/ai-automation.html">Explore business automation &rarr;</a></div><figure class="hp-comparison-figure"><div class="hp-compare-stage" style="--compare:50%"><div class="hp-compare-panel hp-compare-before"><p class="hp-label">Illustration / Manual workflow</p><h3>Separate tools.</h3><span>Enquiries across inboxes</span><span>Records in a spreadsheet</span><span>Follow-ups remembered by hand</span></div><div class="hp-compare-panel hp-compare-after"><p class="hp-label">Illustration / Connected workflow</p><h3>Connected steps.</h3><span>A clear enquiry path</span><span>A shared business record</span><span>Reminders built into the flow</span></div><span class="hp-compare-divider" aria-hidden="true"></span></div><label for="hp-comparison-range">Move to compare the two workflow approaches</label><input id="hp-comparison-range" type="range" min="0" max="100" value="50" aria-valuetext="50 percent connected workflow"><figcaption>Illustrative comparison, not a client screenshot or measured result.</figcaption></figure></div></details>
+<section id="workflow" class="nx-workflow section" aria-labelledby="nx-flow-title"><div class="container"><div class="nx-flow-heading"><div><h2 id="nx-flow-title">From enquiry to confirmed booking</h2></div><p>See how a customer message can become a booking and a business record. This interactive example shows what a connected setup could do.</p></div><div class="nx-demo"><div class="nx-demo-toolbar"><span><i></i> WORKFLOW DEMO / SALON BOOKING</span></div><div class="nx-demo-layout"><div class="nx-flow-steps" role="group" aria-label="Explore workflow steps"><button type="button" class="nx-step is-active" data-nx-step="0" aria-pressed="true" aria-controls="nx-flow-screen"><span class="nx-step-num">01</span><span><strong>Message arrives</strong><small>A customer asks about availability.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="1" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">02</span><span><strong>AI analyses the enquiry</strong><small>The assistant checks the request and approved information.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="2" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">03</span><span><strong>Details are extracted</strong><small>Service, preferred time and contact details are organised.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="3" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">04</span><span><strong>CRM lead is created</strong><small>The enquiry is saved for your team to follow up.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="4" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">05</span><span><strong>Meeting is scheduled</strong><small>An available appointment time is selected.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button><button type="button" class="nx-step" data-nx-step="5" aria-pressed="false" aria-controls="nx-flow-screen"><span class="nx-step-num">06</span><span><strong>Confirmation is sent</strong><small>The customer and your team receive the details.</small></span><span class="nx-step-arrow" aria-hidden="true">↗</span></button></div><div class="nx-flow-screen" id="nx-flow-screen"><div class="nx-screen-head"><span class="nx-avatar">S</span><div><strong>Studio appointments</strong><small>Illustrative customer conversation</small></div><span class="nx-status-dot"></span></div><div class="nx-screen-body"><div class="nx-message">Hi! Can I book a haircut tomorrow afternoon?<small>Customer enquiry</small></div><div class="nx-response nx-stage" data-flow-visible="1"><strong>Request understood</strong><p>Haircut enquiry, for tomorrow afternoon.</p><small>AI analysis · using approved service information</small></div><div class="nx-sync nx-stage" data-flow-visible="2"><span aria-hidden="true">↳</span><div><strong>Useful details captured</strong><p>Service: haircut · Preferred time: afternoon · Contact: from the enquiry.</p></div></div><div class="nx-sync nx-stage" data-flow-visible="3"><span aria-hidden="true">✓</span><div><strong>Lead created in the CRM</strong><p>The request and its context are ready for a team member to review.</p></div></div><div class="nx-booking nx-stage" data-flow-visible="4"><span aria-hidden="true">✓</span><div><small>APPOINTMENT SCHEDULED</small><strong>Haircut · Tomorrow, 2:30 PM</strong><p>Customer selected an available time.</p></div></div><div class="nx-sync nx-stage" data-flow-visible="5"><span aria-hidden="true">↗</span><div><strong>Confirmation sent</strong><p>The customer gets the appointment details. Your team can see the booking and lead record.</p></div></div></div><div class="nx-screen-footer"><span id="nx-flow-caption">01 / A message starts the journey.</span><span aria-hidden="true">● ● ●</span></div></div></div><div class="nx-demo-bottom"><p>Example only. Integrations, availability checks, and handover rules are configured for your business.</p><a href="services/ai-automation">Explore automation ↗</a></div></div>
+<details class="home-workflow-comparison"><summary>Compare manual and connected workflows</summary><div class="hp-comparison-grid"><div><h2 id="hp-comparison-title">From separate tasks<br>to connected steps.</h2><p>See the idea behind a connected workflow. The right implementation starts with understanding your current process.</p><a class="hp-text-link" href="services/ai-automation">Explore business automation &rarr;</a></div><figure class="hp-comparison-figure"><div class="hp-compare-stage" style="--compare:50%"><div class="hp-compare-panel hp-compare-before"><p class="hp-label">Illustration / Manual workflow</p><h3>Separate tools.</h3><span>Enquiries across inboxes</span><span>Records in a spreadsheet</span><span>Follow-ups remembered by hand</span></div><div class="hp-compare-panel hp-compare-after"><p class="hp-label">Illustration / Connected workflow</p><h3>Connected steps.</h3><span>A clear enquiry path</span><span>A shared business record</span><span>Reminders built into the flow</span></div><span class="hp-compare-divider" aria-hidden="true"></span></div><label for="hp-comparison-range">Move to compare the two workflow approaches</label><input id="hp-comparison-range" type="range" min="0" max="100" value="50" aria-valuetext="50 percent connected workflow"><figcaption>Illustrative comparison, not a client screenshot or measured result.</figcaption></figure></div></details>
 </div></section>
 
-<section class="section hp-process" id="process" aria-labelledby="process-title"><div class="container"><div class="hp-section-top"><div><p class="eyebrow">How we work</p><h2 id="process-title">Five clear steps.<br>One shared direction.</h2></div><p>See the direction before the build, follow the progress, and know what happens after launch.</p></div><div class="hp-process-rail" aria-hidden="true"><span></span></div><ol class="process-list hp-process-list"><li class="process-step"><span class="process-step__num">STEP 01</span><h3>Discover</h3><p>We understand your business, goals, and users before writing a single line of code.</p></li><li class="process-step"><span class="process-step__num">STEP 02</span><h3>Design</h3><p>Wireframes and a visual direction you approve, so there are no surprises later.</p></li><li class="process-step"><span class="process-step__num">STEP 03</span><h3>Build</h3><p>Clean, modular development with regular previews you can open on your own phone.</p></li><li class="process-step"><span class="process-step__num">STEP 04</span><h3>Test</h3><p>Checks across key devices, browsers, and business workflows, including performance, accessibility, and security.</p></li><li class="process-step"><span class="process-step__num">STEP 05</span><h3>Launch &amp; Support</h3><p>Deployment, monitoring, and honest post-launch support that doesn't disappear.</p></li></ol><p class="hp-process-note"><a class="hp-text-link" href="case-studies/index.html">See the approach in our project stories &rarr;</a></p></div></section>
+<section class="section hp-process" id="process" aria-labelledby="process-title"><div class="container"><div class="hp-section-top"><div><h2 id="process-title">Five clear steps.<br>One shared direction.</h2></div><p>See the direction before the build, follow the progress, and know what happens after launch.</p></div><div class="hp-process-rail" aria-hidden="true"><span></span></div><ol class="process-list hp-process-list"><li class="process-step"><span class="process-step__num">STEP 01</span><h3>Discover</h3><p>We understand your business, goals, and users before writing a single line of code.</p></li><li class="process-step"><span class="process-step__num">STEP 02</span><h3>Design</h3><p>Wireframes and a visual direction you approve, so there are no surprises later.</p></li><li class="process-step"><span class="process-step__num">STEP 03</span><h3>Build</h3><p>Clean, modular development with regular previews you can open on your own phone.</p></li><li class="process-step"><span class="process-step__num">STEP 04</span><h3>Test</h3><p>Checks across key devices, browsers, and business workflows, including performance, accessibility, and security.</p></li><li class="process-step"><span class="process-step__num">STEP 05</span><h3>Launch &amp; Support</h3><p>Deployment, monitoring, and honest post-launch support that doesn't disappear.</p></li></ol><p class="hp-process-note"><a class="hp-text-link" href="case-studies/">See the approach in our project stories &rarr;</a></p></div></section>
 
 <section class="section section--alt" id="industries" aria-labelledby="industries-title">
       <div class="container">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">Industries We Serve</p>
           <h2 id="industries-title">Built around how your industry actually works</h2>
           <p class="lead">Billing, websites, and AI, configured for the way your business specifically runs.</p>
         </div>
         <div class="industry-grid" data-reveal-group>
-          <a class="card industry-tile" href="industries/healthcare.html">
+          <a class="card industry-tile" href="industries/healthcare">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Clinics &middot; Hospitals &middot; Pharmacies</p>
@@ -1782,7 +1754,7 @@
             <p>Billing, patient records, AI chatbots, and automation built around appointments and prescriptions.</p>
             <span class="industry-tile__go">Explore Healthcare<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-          <a class="card industry-tile" href="industries/retail-fashion.html">
+          <a class="card industry-tile" href="industries/retail-fashion">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18M16 10a4 4 0 0 1-8 0"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Retail Shops &middot; Fashion Stores &middot; Jewellers</p>
@@ -1791,7 +1763,7 @@
             <p>Billing, websites, and marketing built around stock, counters, and what customers come back for.</p>
             <span class="industry-tile__go">Explore Retail &amp; Fashion<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-          <a class="card industry-tile" href="industries/hospitality-events.html">
+          <a class="card industry-tile" href="industries/hospitality-events">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M3 10h18M8 2v4M16 2v4M9 16l2 2 4-4"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Hotels &middot; Restaurants &middot; Event Venues</p>
@@ -1800,7 +1772,7 @@
             <p>Billing, AI chatbots, and websites built around bookings, orders, and guests.</p>
             <span class="industry-tile__go">Explore Hospitality &amp; Events<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-          <a class="card industry-tile" href="industries/beauty-wellness.html">
+          <a class="card industry-tile" href="industries/beauty-wellness">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4 8.12 15.88M14.47 14.48 20 20M8.12 8.12 12 12"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Salons &middot; Spas &middot; Fitness Studios</p>
@@ -1809,7 +1781,7 @@
             <p>Billing, AI chatbots, websites, and automation built around appointments, memberships, and repeat clients.</p>
             <span class="industry-tile__go">Explore Beauty &amp; Wellness<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-          <a class="card industry-tile" href="industries/manufacturing-trade.html">
+          <a class="card industry-tile" href="industries/manufacturing-trade">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m7.5 4.27 9 5.15M21 8v8a2 2 0 0 1-1 1.73l-7 4a2 2 0 0 1-2 0l-7-4A2 2 0 0 1 3 16V8a2 2 0 0 1 1-1.73l7-4a2 2 0 0 1 2 0l7 4A2 2 0 0 1 21 8Z"/><path d="m3.27 6.96 8.73 5.04 8.73-5.04M12 22.08V12"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Manufacturers &middot; Distributors &middot; Workshops</p>
@@ -1818,7 +1790,7 @@
             <p>ERP, billing, and automation built around production stages, bulk pricing, and dispatch.</p>
             <span class="industry-tile__go">Explore Manufacturing &amp; Trade<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg></span>
           </a>
-          <a class="card industry-tile" href="industries/education-services.html">
+          <a class="card industry-tile" href="industries/education-services">
             <div class="industry-tile__top">
               <span class="industry-tile__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z"/></svg><span class="industry-tile__dot"></span></span>
               <p class="industry-tile__cat">Coaching Classes &middot; Schools &middot; Rental Businesses</p>
@@ -1835,7 +1807,6 @@
       <div class="container">
         <div class="intro__grid intro__grid--single">
           <div class="intro__copy" data-reveal>
-            <p class="eyebrow">About us</p>
             <h2 id="about-title">Meet <span class="text-signal">GURU AI TECHNOLOGIES</span></h2>
             <p class="lead">We’re a Pune-based engineering studio. We build websites, business software and AI workflows around the way your team works.</p>
             <p>From a salon booking website to a complete billing platform, we treat every
@@ -1849,7 +1820,6 @@
     <section class="section section--alt section--image-backdrop" id="why" aria-labelledby="why-title">
       <div class="container">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">Why GURU AI</p>
           <h2 id="why-title">Built like a product, not a project</h2>
           <p class="lead">Four principles behind every line of code we ship.</p>
         </div>
@@ -1881,7 +1851,6 @@
     <section class="section section--image-backdrop" id="clients" aria-labelledby="clients-title">
       <div class="container">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">Trusted By</p>
           <h2 id="clients-title">Real businesses, running on what we built</h2>
           <p class="lead">No stock logos, just the names of the businesses we actually work with.</p>
         </div>
@@ -1890,7 +1859,7 @@
           <span class="industry-pulse__dot"></span>
           <span>6 businesses, actively running on what we built</span>
         </div>
-        <p style="margin:0 0 var(--sp-5);"><a class="text-link" href="case-studies/index.html">Read the full case studies &rarr;</a></p>
+        <p style="margin:0 0 var(--sp-5);"><a class="text-link" href="case-studies/">Read the full case studies &rarr;</a></p>
         <ul class="clients-strip" role="list" data-reveal-group style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;list-style:none;padding:0;margin:0;">
           <li class="card" style="padding:1.25rem;"><strong>Accusize Gauges &amp; Tools Pvt Ltd</strong><span style="display:block;color:var(--c-text-soft,#5B6B85);margin-top:.35rem;">Precision gauge manufacturer, Pune. Custom ERP and quotation system.</span></li>
           <li class="card" style="padding:1.25rem;"><strong>7S Family Salon</strong><span style="display:block;color:var(--c-text-soft,#5B6B85);margin-top:.35rem;">Multi branch salon group. Booking website and billing software.</span></li>
@@ -1905,7 +1874,7 @@
     <section class="section hp-feedback" id="testimonials" aria-labelledby="testimonials-title" data-testimonials>
       <div class="container">
         <div class="hp-section-top">
-          <div><p class="eyebrow">Client feedback</p><h2 id="testimonials-title">The work matters.<br>So does the experience.</h2></div>
+          <div><h2 id="testimonials-title">The work matters.<br>So does the experience.</h2></div>
           <div class="hp-feedback-controls" role="group" aria-label="Feedback controls" data-feedback-controls hidden>
             <button type="button" data-feedback-prev aria-label="Previous testimonial" aria-controls="client-feedback-track">←</button>
             
@@ -1925,7 +1894,7 @@
                 <span class="t-card__name">Infinity Unisex Salon</span>
                 <span class="t-card__place">Shikrapur, Pune</span>
               </span>
-            <a class="hp-feedback-case" href="case-studies/salon-ai-chatbot.html">View project &nearr;</a></figcaption>
+            <a class="hp-feedback-case" href="case-studies/salon-ai-chatbot">View project &nearr;</a></figcaption>
           </figure><figure class="t-card hp-feedback-card">
             <div class="t-card__tag">Website Development</div>
             <blockquote class="t-card__quote">GURU rebuilt our online presence beautifully. The booking flow is smooth, it loads instantly on phones, and my customers keep complimenting how professional it feels.</blockquote>
@@ -2105,7 +2074,7 @@
                 <span class="t-card__name">Infinity Unisex Salon</span>
                 <span class="t-card__place">Shikrapur, Pune</span>
               </span>
-            <a class="hp-feedback-case" href="case-studies/salon-ai-chatbot.html">View project &nearr;</a></figcaption>
+            <a class="hp-feedback-case" href="case-studies/salon-ai-chatbot">View project &nearr;</a></figcaption>
           </figure><figure class="t-card hp-feedback-card">
             <div class="t-card__tag">AI Chatbot</div>
             <blockquote class="t-card__quote">The AI assistant handles patient questions round the clock and only forwards the serious ones to us. It feels human, and it has saved my front desk hours every day.</blockquote>
@@ -2127,7 +2096,6 @@
     <section class="section section--alt" id="faq" aria-labelledby="faq-title">
       <div class="container">
         <div class="section__head" data-reveal>
-          <p class="eyebrow">FAQ</p>
           <h2 id="faq-title">Common questions</h2>
         </div>
         <div class="faq-list" data-reveal-group>
@@ -2145,13 +2113,11 @@
     <section class="section" id="contact" aria-labelledby="contact-title">
       <div class="container">
         <div class="section__head">
-          <p class="eyebrow">Contact</p>
           <h2 id="contact-title">Tell us what you want to build</h2>
           <p class="lead">Share a few details about your project and we’ll help you work out the next step.</p>
         </div>
         <div class="contact-grid">
           <aside class="home-contact-info" aria-labelledby="contact-direct-title">
-            <p class="home-contact-kicker">Reach us directly</p>
             <h3 id="contact-direct-title">Talk to our team</h3>
             <p>We reply within 24 hours, Monday to Saturday.</p>
             <ul class="contact-channels" role="list">
@@ -2207,25 +2173,25 @@
     <div class="container">
       <div class="footer__grid">
         <div class="footer__brand">
-          <a class="nav__logo" href="index.html" aria-label="GURU AI TECHNOLOGIES, Home"><img class="nav__logo-img" src="assets/brand/logo-240.webp" width="240" height="104" alt="GURU AI TECHNOLOGIES" loading="lazy" decoding="async"></a>
+          <a class="nav__logo" href="./" aria-label="GURU AI TECHNOLOGIES, Home"><img class="nav__logo-img" src="assets/brand/logo-240.webp" width="240" height="104" alt="GURU AI TECHNOLOGIES" loading="lazy" decoding="async"></a>
           <p>AI-powered websites, software, and automation for businesses that want to move faster. Built in Pune. Deployed worldwide.</p>
         </div>
         <div>
           <h2 class="footer__title">Services</h2>
           <ul class="footer__list">
-            <li><a href="services/ai-websites.html">AI-Powered Websites</a></li>
-            <li><a href="services/software-development.html">Custom Software</a></li>
-            <li><a href="services/chatbots-voice.html">AI Chatbots</a></li>
-            <li><a href="services/billing-software.html">Billing Software</a></li>
-            <li><a href="services/cyber-security.html">Cyber Security</a></li>
+            <li><a href="services/ai-websites">AI-Powered Websites</a></li>
+            <li><a href="services/software-development">Custom Software</a></li>
+            <li><a href="services/chatbots-voice">AI Chatbots</a></li>
+            <li><a href="services/billing-software">Billing Software</a></li>
+            <li><a href="services/cyber-security">Cyber Security</a></li>
           </ul>
         </div>
         <div>
           <h2 class="footer__title">Company</h2>
           <ul class="footer__list">
             
-            <li><a href="about.html">About</a></li>
-            <li><a href="industries/index.html">Industries</a></li><li><a href="case-studies/index.html">Case Studies</a></li>
+            <li><a href="about">About</a></li>
+            <li><a href="industries/">Industries</a></li><li><a href="case-studies/">Case Studies</a></li>
             <li><a href="#process">Process</a></li>
             <li><a href="#faq">FAQ</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -2243,10 +2209,10 @@
       </div>
       <div class="footer__bottom">
         <p>© <span data-year>2026</span> GURU AI TECHNOLOGIES. All rights reserved.</p>
-        <div class="footer__legal"><a href="sitemap.html">Sitemap</a>
-          <a href="legal/privacy.html">Privacy</a>
-          <a href="legal/terms.html">Terms</a>
-          <a href="legal/cookies.html">Cookies</a>
+        <div class="footer__legal"><a href="sitemap">Sitemap</a>
+          <a href="legal/privacy">Privacy</a>
+          <a href="legal/terms">Terms</a>
+          <a href="legal/cookies">Cookies</a>
         </div>
       </div>
     </div>
@@ -2267,5 +2233,6 @@
   </button>
 
 
+<script defer src="chatbot/loader.js?v=2.0.0"></script>
 </body>
 </html>

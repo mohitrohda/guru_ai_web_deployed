@@ -105,14 +105,14 @@ window.GURU.chatbotData.register([
     keywords: ["portfolio","projects","work","examples","previous work","clients","kaam dikhaao","kam dakhva","case study","done before"],
     responses: {
       en: [
-        "Some of our shipped work: Infinity Unisex Salon (premium booking website), AI Business Billing Software, multilingual AI chatbots, salon web suites, and business automation systems. Scroll to the Work section on our homepage for the full showcase.",
-        "We've built salon websites with WhatsApp booking, GST billing software, trilingual chatbots (like me!), and automation systems. Check the Selected Work section — or tell me your industry and I'll point to the closest example.",
+        "Published case studies: Accusize Gauges & Tools (website, ERP and calibration tracking for a Pune manufacturer), a Salon + AI chatbot project (MR.COOL), and our own GST-ready Billing & Management Software. You can read them under Case Studies, or tell me your industry and I'll point to the closest one.",
+        "Take a look at the Case Studies page for real project stories, or tell me your industry and I'll point you to the closest example.",
       ],
       hi: [
-        "Hamara kaam: Infinity Unisex Salon website, AI billing software, multilingual chatbots, aur automation systems. Homepage ke Work section mein sab dekh sakte hain.",
+        "Hamare published case studies: Accusize Gauges & Tools (website, ERP aur calibration tracking), Salon + AI chatbot (MR.COOL), aur apna GST-ready Billing & Management Software. Case Studies page par dekh sakte hain.",
       ],
       mr: [
-        "Amche kam: Infinity Unisex Salon website, AI billing software, multilingual chatbots, ani automation systems. Homepage chya Work section madhe sagle bagu shakta.",
+        "Amchya published case studies: Accusize Gauges & Tools (website, ERP ani calibration tracking), Salon + AI chatbot (MR.COOL), ani amcha GST-ready Billing & Management Software. Case Studies page var bagu shakta.",
       ],
     },
   },
@@ -121,14 +121,14 @@ window.GURU.chatbotData.register([
     keywords: ["technology","tech stack","which technology","react","python","node","kya use karte","stack","framework","language use"],
     responses: {
       en: [
-        "Our core stack: HTML5, CSS3, and JavaScript for lightning-fast frontends; React where it fits; Node.js and Python on the backend; PostgreSQL/MongoDB for data; OpenAI, Claude, Gemini, and Cloudflare AI for intelligence; Cloudflare Pages and Workers for delivery. Right tool for the job, always.",
-        "We choose technology by fit, not fashion — vanilla JS for speed, React for complex apps, Python for AI and data, Cloudflare for deployment. Curious about a specific choice?",
+        "We don't publish a fixed technology list because the stack is chosen per project, based on what you need to build. What I can say for sure: our websites are mobile-first with security headers and structured data, we build Android and cross-platform apps, and we use Cloudflare for hosting and delivery. Tell me about your project, or ask the team about a specific technology on WhatsApp: +91 80876 95569.",
+        "The right technology depends on the project, so we agree it with you before work starts. If you have a specific tool or framework in mind, ask the team on WhatsApp (+91 80876 95569) and they'll confirm what fits.",
       ],
       hi: [
-        "Hamara stack: HTML, CSS, JavaScript, React, Node.js, Python, aur AI ke liye OpenAI, Claude, Gemini. Deployment Cloudflare par. Kaam ke hisaab se sahi tool chunte hain.",
+        "Hum fixed technology list publish nahi karte, kyunki stack har project ke hisaab se chuna jata hai. Pakka yeh keh sakte hain: hamari websites mobile-first hoti hain, hum Android aur cross-platform apps banate hain, aur hosting ke liye Cloudflare use karte hain. Kisi specific technology ke baare mein team se WhatsApp par poochiye: +91 80876 95569.",
       ],
       mr: [
-        "Amcha stack: HTML, CSS, JavaScript, React, Node.js, Python, ani AI sathi OpenAI, Claude, Gemini. Deployment Cloudflare var. Kamapramane yogya tool nivadto.",
+        "Amhi fixed technology list publish karat nahi, karan stack pratyek project nusar nivadla jato. Nakki sangu shakto: amchya websites mobile-first astat, amhi Android ani cross-platform apps banavto, ani hosting sathi Cloudflare vaparto. Konatyahi specific technology baddal team la WhatsApp var vichara: +91 80876 95569.",
       ],
     },
   },

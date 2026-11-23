@@ -37,16 +37,13 @@ window.GURU.chatbotData.register([
     patterns: [/(how many )?revisions/i, /money back|refund/i, /if (i'm |i am )?not (happy|satisfied)/i],
     responses: {
       en: [
-        "We work closely with you and include revision rounds during the project, so the final result matches what you approved. Nothing goes live until you're happy with it. Specific terms are always written into your proposal.",
-        "Yes — your project includes review and revision stages, and we don't consider it done until you sign off. The exact number of rounds and scope is agreed upfront so there are no surprises.",
+        "I don't have published guarantee, refund or revision terms, so I can't promise any. What I can say: you see designs and previews before the build goes live, and every project includes post-launch support. For the exact terms of your project, ask the team on WhatsApp (+91 80876 95569) or email contact@guruaitechnologies.com.",
       ],
       hi: [
-        "Hum aapke saath milkar kaam karte hain aur project ke dauraan revision rounds shaamil hote hain — jab tak aap khush na ho, kuch live nahi hota. Terms proposal mein clearly likhe jaate hain.",
-        "Haan — review aur revision stages included hain, aur jab tak aap approve na karein, kaam pura nahi maana jaata.",
+        "Guarantee, refund ya revision ke published terms mere paas nahi hain, isliye main koi promise nahi kar sakta. Itna keh sakta hoon: build se pehle design aur previews dikhaye jaate hain, aur har project mein post-launch support shaamil hai. Exact terms ke liye team se WhatsApp par poochiye: +91 80876 95569.",
       ],
       mr: [
-        "Amhi tumchya sobat milun kaam karto ani project madhe revision rounds astat — jopryant tumhi khush hot nahi, kahi live hot nahi. Terms proposal madhe clearly lihilele astat.",
-        "Ho — review ani revision stages included ahet, ani jopryant tumhi approve karat nahi, kaam pura manle jaat nahi.",
+        "Guarantee, refund kinva revision che published terms majhyakade nahit, mhanun mi kahi promise karu shakat nahi. Evdhe sangu shakto: build adhi design ani previews dakhavle jatat, ani pratyek project madhe post-launch support asto. Exact terms sathi team la WhatsApp var vichara: +91 80876 95569.",
       ],
     },
   },

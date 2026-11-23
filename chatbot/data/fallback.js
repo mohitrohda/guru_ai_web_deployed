@@ -9,7 +9,7 @@ window.GURU.chatbotData.register([
         "Hmm, I don't have a confident answer for that one. Try asking about our services, pricing, process, or contact details — or reach a human directly on WhatsApp at +91 80876 95569.",
         "That's outside what I know well. The team can answer anything on WhatsApp: +91 80876 95569 (Mon–Sat, 10 AM – 7 PM). Meanwhile, want a quick overview of our services?",
         "I might be missing your meaning — could you rephrase? Or skip me entirely and ask the humans on WhatsApp: +91 80876 95569.",
-        "Good question — and honestly, above my pay grade. A real person from the team will answer on WhatsApp at +91 80876 95569, usually within the hour during business time.",
+        "Good question, but I don't want to guess. The team can answer it on WhatsApp at +91 80876 95569 (Mon–Sat, 10 AM – 7 PM IST) or by email at contact@guruaitechnologies.com.",
       ],
       hi: [
         "Hmm, iska pakka jawab mere paas nahi hai. Services, pricing ya process ke baare mein poochiye — ya seedha WhatsApp kijiye: +91 80876 95569.",
